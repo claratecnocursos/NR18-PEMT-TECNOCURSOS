@@ -17,8 +17,8 @@
   // "100%" vira extenso para a voz não ler "por cento" errado.
   var HOME_TEXT = [
     'Segurança do Trabalho.',
-    'N R onze, Operação de Paleteira Manual.',
-    'Norma, habilitação, condução segura, cargas, E P Is e emergência.',
+    'N R trinta e três. Treinamento para Trabalhador Autorizado e Vigia em Espaços Confinados.',
+    'Norma e riscos, capacitação da equipe, PET e gases, EPIs e primeiros socorros.',
     'Quatro módulos completos. Treinamento cem por cento online.',
     'Toque em iniciar o treinamento.'
   ].join(' ');
@@ -57,6 +57,7 @@
       .replace(/[•·▶✓✕×|]/g, ' ')
       .replace(/\s*—\s*/g, ', ')
       .replace(/\bNR-11\b/g, 'N R onze')
+      .replace(/\bNR-33\b/g, 'N R trinta e três')
       .replace(/\bEPIs\b/g, 'E P Is')
       .replace(/\bEPI\b/g, 'E P I')
       .replace(/\bASO\b/g, 'A S O')
@@ -128,6 +129,40 @@
     list(screen.stack).forEach(function (s) {
       parts.push(sentence(s.caption || s.imageAlt));
     });
+    list(screen.groups).forEach(function (g) {
+      if (g && g.label) parts.push(sentence(g.label));
+      list(g && g.items).forEach(function (it) {
+        parts.push(sentence(typeof it === 'string' ? it : (it.text || it.title)));
+      });
+    });
+    list(screen.facts).forEach(function (f) {
+      parts.push(labelled(f.value, f.label));
+    });
+    if (screen.reasonTitle) parts.push(sentence(screen.reasonTitle));
+    list(screen.reasons).forEach(function (r) {
+      parts.push(sentence(r.text || r.title));
+    });
+    if (screen.sign) {
+      parts.push(labelled(screen.sign.kicker || screen.sign.title, [screen.sign.title, screen.sign.text].filter(Boolean).join('. ')));
+    }
+    list(screen.steps).forEach(function (s) {
+      if (!s) return;
+      var detail = String(s.text || '').replace(/^O₂\.?\s*/i, '');
+      parts.push(sentence([s.n, s.title, detail].filter(Boolean).join('. ')));
+    });
+    list(screen.alerts).forEach(function (a) {
+      parts.push(labelled(a.title, a.text));
+    });
+    list(screen.gear).forEach(function (g) {
+      parts.push(sentence([g.n, g.title].filter(Boolean).join('. ')));
+    });
+    if (screen.ban) {
+      var banTitle = String(screen.ban.title || '').replace(/[.!?]+$/, '');
+      parts.push(labelled(screen.ban.kicker || banTitle, [banTitle, screen.ban.text].filter(Boolean).join('. ')));
+    }
+    list(screen.phones).forEach(function (p) {
+      parts.push(labelled(p.n, p.label));
+    });
     list(screen.images).forEach(function (img) {
       if (typeof img === 'string') return;
       parts.push(sentence(img.caption || img.imageAlt || img.alt));
@@ -142,7 +177,7 @@
       parts.push(sentence(b));
     });
     list(screen.rules).forEach(function (r) {
-      parts.push(sentence(r.text || r.body));
+      parts.push(r && r.title ? labelled(r.title, r.text || r.body) : sentence(r.text || r.body || r));
     });
 
     if (screen.quote) parts.push(sentence(screen.quote));
@@ -197,7 +232,7 @@
     /* Ordenar e associar embaralham os itens a cada exibição, e os dados
        guardam a resposta certa: aqui vai só o enunciado. */
     if (screen.type === 'order' || screen.type === 'match' || screen.type === 'sort') {
-      if (screen.title) parts.push(clean(screen.title) + '.');
+      if (screen.title) parts.push(sentence(screen.title));
       if (screen.body) parts.push(clean(stripHtml(screen.body)));
       if (screen.type === 'sort') {
         var total = list(screen.items).length;
@@ -205,18 +240,22 @@
         if (screen.left && screen.left.label) parts.push(clean(screen.left.label) + '.');
         if (screen.right && screen.right.label) parts.push(clean(screen.right.label) + '.');
       }
+      if (screen.type === 'match') {
+        if (screen.leftTitle) parts.push(clean(screen.leftTitle) + '.');
+        if (screen.rightTitle) parts.push(clean(screen.rightTitle) + '.');
+      }
       return joinParts(parts);
     }
 
     if (screen.type === 'quiz-intro') {
-      if (screen.title) parts.push(clean(screen.title) + '.');
+      if (screen.title) parts.push(sentence(screen.title));
       parts.push(quizIntroText(screen));
       return joinParts(parts);
     }
 
     // capa, conteúdo, imagem, reflexão e conclusão
-    if (screen.eyebrow) parts.push(clean(screen.eyebrow) + '.');
-    if (screen.title) parts.push(clean(screen.title) + '.');
+    if (screen.eyebrow) parts.push(sentence(screen.eyebrow));
+    if (screen.title) parts.push(sentence(screen.title));
     if (screen.subtitle) parts.push(clean(screen.subtitle));
 
     // na tela de reflexão a pergunta vem quebrada em duas linhas
@@ -252,7 +291,7 @@
     var n = nums[moduleId] || String(moduleId);
     var total = nums[mods.length] || String(mods.length);
     var finished = variant === 'done' || variant === 'done-first';
-    var parts = ['N R onze, Operação de Paleteira Manual.'];
+    var parts = ['N R trinta e três, Segurança no Trabalho em Espaço Confinado.'];
     if (finished) parts.push('Você finalizou os módulos. Toque para revisar o Módulo ' + n + '.');
     else parts.push('Um módulo por vez. Ao concluir, o próximo é liberado.');
     parts.push(variant === 'done-first' ? 'Treinamento concluído.' : 'Você está aqui.');
@@ -267,7 +306,7 @@
     var mods = (session && session.modules) || [];
     var nums = ['', 'um', 'dois', 'três', 'quatro'];
     var parts = [
-      'N R onze, Operação de Paleteira Manual.',
+      'N R trinta e três, Segurança no Trabalho em Espaço Confinado.',
       'Um módulo por vez. Ao concluir, o próximo é liberado.'
     ];
     if (nextModule) {

@@ -1,0 +1,408 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-23T16:50:42.760Z",
+  "source": "question-screen-data.js",
+  "audioDir": "audios",
+  "slides": [
+    {
+      "index": 0,
+      "id": "home-nr11",
+      "title": "Abertura",
+      "file": "audios/home-nr11.mp3",
+      "text": "Segurança do Trabalho. N R trinta e três. Treinamento para Trabalhador Autorizado e Vigia em Espaços Confinados. Norma e riscos, capacitação da equipe, P E T e gases, E P Is e primeiros socorros. quatro módulos completos. Treinamento cem por cento online. Toque em iniciar o treinamento.",
+      "audioReady": true
+    },
+    {
+      "index": 1,
+      "id": "menu-nr11-done",
+      "title": "Menu, concluído",
+      "file": "audios/menu-nr11-done.mp3",
+      "text": "N R trinta e três, Segurança no Trabalho em Espaço Confinado. Um módulo por vez. Ao concluir, o próximo é liberado. Treinamento concluído. Você pode revisar o módulo um.",
+      "audioReady": true
+    },
+    {
+      "index": 2,
+      "id": "menu-nr11-1-start",
+      "title": "Menu, módulo 1, start",
+      "file": "audios/menu-nr11-1-start.mp3",
+      "text": "N R trinta e três, Segurança no Trabalho em Espaço Confinado. Um módulo por vez. Ao concluir, o próximo é liberado. Você está aqui. Módulo um de quatro. Fundamentos Legais, Caracterização e Gerenciamento de Riscos. Apresentar o embasamento normativo da N R trinta e três, conceituar tecnicamente o espaço confinado e as atmosferas perigosas, e ensinar a metodologia de identificação de perigos e causas de acidentes. Iniciar módulo.",
+      "audioReady": true
+    },
+    {
+      "index": 3,
+      "id": "menu-nr11-1-review",
+      "title": "Menu, módulo 1, review",
+      "file": "audios/menu-nr11-1-review.mp3",
+      "text": "N R trinta e três, Segurança no Trabalho em Espaço Confinado. Um módulo por vez. Ao concluir, o próximo é liberado. Você está aqui. Módulo um de quatro. Fundamentos Legais, Caracterização e Gerenciamento de Riscos. Apresentar o embasamento normativo da N R trinta e três, conceituar tecnicamente o espaço confinado e as atmosferas perigosas, e ensinar a metodologia de identificação de perigos e causas de acidentes. Revisar módulo.",
+      "audioReady": true
+    },
+    {
+      "index": 4,
+      "id": "menu-nr11-1-done-first",
+      "title": "Menu, módulo 1, done-first",
+      "file": "audios/menu-nr11-1-done-first.mp3",
+      "text": "N R trinta e três, Segurança no Trabalho em Espaço Confinado. Você finalizou os módulos. Toque para revisar o Módulo um. Treinamento concluído. Módulo um de quatro. Fundamentos Legais, Caracterização e Gerenciamento de Riscos. Apresentar o embasamento normativo da N R trinta e três, conceituar tecnicamente o espaço confinado e as atmosferas perigosas, e ensinar a metodologia de identificação de perigos e causas de acidentes. Revisar módulo.",
+      "audioReady": true
+    },
+    {
+      "index": 5,
+      "id": "menu-nr11-2-start",
+      "title": "Menu, módulo 2, start",
+      "file": "audios/menu-nr11-2-start.mp3",
+      "text": "N R trinta e três, Segurança no Trabalho em Espaço Confinado. Um módulo por vez. Ao concluir, o próximo é liberado. Você está aqui. Módulo dois de quatro. Direitos, Capacitação e Papéis da Equipe de Trabalho. Estabelecer os direitos e deveres do trabalhador, detalhar a matriz de treinamento e definir a composição da equipe com as atribuições específicas de cada função. Iniciar módulo.",
+      "audioReady": true
+    },
+    {
+      "index": 6,
+      "id": "menu-nr11-2-review",
+      "title": "Menu, módulo 2, review",
+      "file": "audios/menu-nr11-2-review.mp3",
+      "text": "N R trinta e três, Segurança no Trabalho em Espaço Confinado. Um módulo por vez. Ao concluir, o próximo é liberado. Você está aqui. Módulo dois de quatro. Direitos, Capacitação e Papéis da Equipe de Trabalho. Estabelecer os direitos e deveres do trabalhador, detalhar a matriz de treinamento e definir a composição da equipe com as atribuições específicas de cada função. Revisar módulo.",
+      "audioReady": true
+    },
+    {
+      "index": 7,
+      "id": "menu-nr11-2-done",
+      "title": "Menu, módulo 2, done",
+      "file": "audios/menu-nr11-2-done.mp3",
+      "text": "N R trinta e três, Segurança no Trabalho em Espaço Confinado. Você finalizou os módulos. Toque para revisar o Módulo dois. Você está aqui. Módulo dois de quatro. Direitos, Capacitação e Papéis da Equipe de Trabalho. Estabelecer os direitos e deveres do trabalhador, detalhar a matriz de treinamento e definir a composição da equipe com as atribuições específicas de cada função. Revisar módulo.",
+      "audioReady": true
+    },
+    {
+      "index": 8,
+      "id": "menu-nr11-3-start",
+      "title": "Menu, módulo 3, start",
+      "file": "audios/menu-nr11-3-start.mp3",
+      "text": "N R trinta e três, Segurança no Trabalho em Espaço Confinado. Um módulo por vez. Ao concluir, o próximo é liberado. Você está aqui. Módulo três de quatro. Permissão de Entrada e Trabalho (P E T), L O T O, Gases e Ventilação. Capacitar o aluno nos procedimentos formais de abertura e gestão da P E T, isolamento de energias (L O T O), sinalização de área, medição técnica de gases e operação de ventilação. Iniciar módulo.",
+      "audioReady": true
+    },
+    {
+      "index": 9,
+      "id": "menu-nr11-3-review",
+      "title": "Menu, módulo 3, review",
+      "file": "audios/menu-nr11-3-review.mp3",
+      "text": "N R trinta e três, Segurança no Trabalho em Espaço Confinado. Um módulo por vez. Ao concluir, o próximo é liberado. Você está aqui. Módulo três de quatro. Permissão de Entrada e Trabalho (P E T), L O T O, Gases e Ventilação. Capacitar o aluno nos procedimentos formais de abertura e gestão da P E T, isolamento de energias (L O T O), sinalização de área, medição técnica de gases e operação de ventilação. Revisar módulo.",
+      "audioReady": true
+    },
+    {
+      "index": 10,
+      "id": "menu-nr11-3-done",
+      "title": "Menu, módulo 3, done",
+      "file": "audios/menu-nr11-3-done.mp3",
+      "text": "N R trinta e três, Segurança no Trabalho em Espaço Confinado. Você finalizou os módulos. Toque para revisar o Módulo três. Você está aqui. Módulo três de quatro. Permissão de Entrada e Trabalho (P E T), L O T O, Gases e Ventilação. Capacitar o aluno nos procedimentos formais de abertura e gestão da P E T, isolamento de energias (L O T O), sinalização de área, medição técnica de gases e operação de ventilação. Revisar módulo.",
+      "audioReady": true
+    },
+    {
+      "index": 11,
+      "id": "menu-nr11-4-start",
+      "title": "Menu, módulo 4, start",
+      "file": "audios/menu-nr11-4-start.mp3",
+      "text": "N R trinta e três, Segurança no Trabalho em Espaço Confinado. Um módulo por vez. Ao concluir, o próximo é liberado. Você está aqui. Módulo quatro de quatro. Equipamentos (E P I/E P C), Plano de Emergência, A P H e Primeiros Socorros. Instruir sobre a seleção de E P Is/E P Cs, os procedimentos de emergência e resgate, a rede de contatos de socorro, os primeiros socorros em trauma/queimaduras e a confecção de nós de resgate. Iniciar módulo.",
+      "audioReady": true
+    },
+    {
+      "index": 12,
+      "id": "menu-nr11-4-review",
+      "title": "Menu, módulo 4, review",
+      "file": "audios/menu-nr11-4-review.mp3",
+      "text": "N R trinta e três, Segurança no Trabalho em Espaço Confinado. Um módulo por vez. Ao concluir, o próximo é liberado. Você está aqui. Módulo quatro de quatro. Equipamentos (E P I/E P C), Plano de Emergência, A P H e Primeiros Socorros. Instruir sobre a seleção de E P Is/E P Cs, os procedimentos de emergência e resgate, a rede de contatos de socorro, os primeiros socorros em trauma/queimaduras e a confecção de nós de resgate. Revisar módulo.",
+      "audioReady": true
+    },
+    {
+      "index": 13,
+      "id": "menu-nr11-4-done",
+      "title": "Menu, módulo 4, done",
+      "file": "audios/menu-nr11-4-done.mp3",
+      "text": "N R trinta e três, Segurança no Trabalho em Espaço Confinado. Você finalizou os módulos. Toque para revisar o Módulo quatro. Você está aqui. Módulo quatro de quatro. Equipamentos (E P I/E P C), Plano de Emergência, A P H e Primeiros Socorros. Instruir sobre a seleção de E P Is/E P Cs, os procedimentos de emergência e resgate, a rede de contatos de socorro, os primeiros socorros em trauma/queimaduras e a confecção de nós de resgate. Revisar módulo.",
+      "audioReady": true
+    },
+    {
+      "index": 14,
+      "id": "nr11-m1-capa",
+      "title": "Módulo 1 — Fundamentos Legais, Caracterização e Gerenciamento de Riscos",
+      "file": "audios/nr11-m1-capa.mp3",
+      "text": "Módulo 1, Fundamentos Legais, Caracterização e Gerenciamento de Riscos. Embasamento normativo da N R trinta e três, conceito de espaço confinado e atmosferas perigosas, e identificação de perigos e causas de acidentes. Na imagem: Capa do módulo 1.",
+      "audioReady": true
+    },
+    {
+      "index": 15,
+      "id": "nr11-m1-objetivo",
+      "title": "Legislação, Objetivo e Definição de Espaço Confinado",
+      "file": "audios/nr11-m1-objetivo.mp3",
+      "text": "Vídeo. Legislação, Objetivo e Definição de Espaço Confinado. Assista ao vídeo para avançar.",
+      "audioReady": true
+    },
+    {
+      "index": 16,
+      "id": "nr11-m1-nr11",
+      "title": "Exemplos de espaços confinados",
+      "file": "audios/nr11-m1-nr11.mp3",
+      "text": "Exemplos de espaços confinados. Toque na foto para ver o próximo exemplo. Espaço 1. Espaço 2. Espaço 3.",
+      "audioReady": true
+    },
+    {
+      "index": 17,
+      "id": "nr11-m1-credencial",
+      "title": "Caracterização de Atmosferas Perigosas e Parâmetros de Oxigênio",
+      "file": "audios/nr11-m1-credencial.mp3",
+      "text": "Vídeo. Caracterização de Atmosferas Perigosas e Parâmetros de Oxigênio. Assista ao vídeo para avançar.",
+      "audioReady": true
+    },
+    {
+      "index": 18,
+      "id": "nr33-m1-onde",
+      "title": "Onde é encontrado o espaço confinado?",
+      "file": "audios/nr33-m1-onde.mp3",
+      "text": "Onde é encontrado o espaço confinado? Indústrias. Indústria de papel e celulose. Indústria gráfica. Indústria alimentícia. Indústria da borracha, do couro e têxtil. Indústria naval e operações marítimas. Indústrias químicas e petroquímicas. Serviços e outras atividades. Serviços de gás. Serviços de água e esgoto. Serviços de eletricidade. Serviços de telefonia. Construção civil. Beneficiamento de minérios. Siderúrgicas e metalúrgicas.",
+      "audioReady": true
+    },
+    {
+      "index": 19,
+      "id": "nr33-m1-pgr",
+      "title": "Gerenciamento no PGR e Riscos Químicos, Biológicos e Físicos",
+      "file": "audios/nr33-m1-pgr.mp3",
+      "text": "Vídeo. Gerenciamento no P G R e Riscos Químicos, Biológicos e Físicos. Assista ao vídeo para avançar.",
+      "audioReady": true
+    },
+    {
+      "index": 20,
+      "id": "nr11-m1-definicao",
+      "title": "Riscos Ergonômicos, Mecânicos e Causas de Acidentes",
+      "file": "audios/nr11-m1-definicao.mp3",
+      "text": "Vídeo. Riscos Ergonômicos, Mecânicos e Causas de Acidentes. Assista ao vídeo para avançar.",
+      "audioReady": true
+    },
+    {
+      "index": 21,
+      "id": "nr33-m1-desafio",
+      "title": "Ato ou condição?",
+      "file": "audios/nr33-m1-desafio.mp3",
+      "text": "Ato ou condição? Não é pergunta de alternativa. Cada carta descreve uma situação dos vídeos: jogue em Ato inseguro ou Condição insegura. Acerte no mínimo três de quatro.",
+      "audioReady": true
+    },
+    {
+      "index": 22,
+      "id": "nr33-m1-sort",
+      "title": "Ato ou condição?",
+      "file": "audios/nr33-m1-sort.mp3",
+      "text": "Ato ou condição? Toque no lado certo antes do tempo acabar. Caso um de quatro. Ato inseguro. Condição insegura.",
+      "audioReady": true
+    },
+    {
+      "index": 23,
+      "id": "nr11-m2-capa",
+      "title": "Módulo 2 — Direitos, Capacitação e Papéis da Equipe de Trabalho",
+      "file": "audios/nr11-m2-capa.mp3",
+      "text": "Módulo 2, Direitos, Capacitação e Papéis da Equipe de Trabalho. Direitos e deveres do trabalhador, matriz de treinamento e atribuições de cada função da equipe. Na imagem: Capa do módulo 2.",
+      "audioReady": true
+    },
+    {
+      "index": 24,
+      "id": "nr11-m2-ritmo",
+      "title": "Direitos, Deveres e Obrigações da Empresa na NR-33",
+      "file": "audios/nr11-m2-ritmo.mp3",
+      "text": "Vídeo. Direitos, Deveres e Obrigações da Empresa na N R trinta e três. Assista ao vídeo para avançar.",
+      "audioReady": true
+    },
+    {
+      "index": 25,
+      "id": "nr11-m2-ergonomia",
+      "title": "Programa de Capacitação: Cargas Horárias e Regras do Treinamento",
+      "file": "audios/nr11-m2-ergonomia.mp3",
+      "text": "Vídeo. Programa de Capacitação: Cargas Horárias e Regras do Treinamento. Assista ao vídeo para avançar.",
+      "audioReady": true
+    },
+    {
+      "index": 26,
+      "id": "nr11-m2-proibicoes",
+      "title": "Composição da Equipe e Atribuições do RT e Supervisor de Entrada",
+      "file": "audios/nr11-m2-proibicoes.mp3",
+      "text": "Vídeo. Composição da Equipe e Atribuições do R T e Supervisor de Entrada. Assista ao vídeo para avançar.",
+      "audioReady": true
+    },
+    {
+      "index": 27,
+      "id": "nr33-m2-supervisor",
+      "title": "Responsável Técnico e Supervisor de Entrada",
+      "file": "audios/nr33-m2-supervisor.mp3",
+      "text": "Responsável Técnico e Supervisor de Entrada. O trabalho em espaço confinado é sempre uma operação em equipe. Quem responde. O Responsável Técnico é o profissional habilitado que supervisiona a conformidade técnica e a capacitação. No campo, a liderança operacional é do Supervisor de Entrada. Item trinta e três ponto três ponto três. Testar a atmosfera antes de autorizar o acesso. Emitir, assinar e entregar a Permissão de Entrada e Trabalho, a P E T, antes do início do serviço. Garantir que os recursos de emergência estejam apostos. O Supervisor tem autoridade para cancelar a P E T e suspender o trabalho caso surja uma condição de risco não prevista, além de ser o responsável por encerrar formalmente a P E T ao término da atividade.",
+      "audioReady": true
+    },
+    {
+      "index": 28,
+      "id": "nr11-m2-transito",
+      "title": "Atribuições do Vigia, Trabalhador Autorizado e Equipe de Resgate",
+      "file": "audios/nr11-m2-transito.mp3",
+      "text": "Vídeo. Atribuições do Vigia, Trabalhador Autorizado e Equipe de Resgate. Assista ao vídeo para avançar.",
+      "audioReady": true
+    },
+    {
+      "index": 29,
+      "id": "nr33-m2-desafio",
+      "title": "Quem faz o quê?",
+      "file": "audios/nr33-m2-desafio.mp3",
+      "text": "Quem faz o quê? Não é pergunta de alternativa. Una cada situação à função certa. São quatro pares.",
+      "audioReady": true
+    },
+    {
+      "index": 30,
+      "id": "nr33-m2-match",
+      "title": "Quem faz o quê?",
+      "file": "audios/nr33-m2-match.mp3",
+      "text": "Quem faz o quê? Situação. Função.",
+      "audioReady": true
+    },
+    {
+      "index": 31,
+      "id": "nr11-m3-capa",
+      "title": "Módulo 3 — Permissão de Entrada e Trabalho (PET), LOTO, Gases e Ventilação",
+      "file": "audios/nr11-m3-capa.mp3",
+      "text": "Módulo 3, Permissão de Entrada e Trabalho (P E T), L O T O, Gases e Ventilação. Abertura e gestão da P E T, bloqueio L O T O, sinalização, medição de gases e ventilação. Na imagem: Capa do módulo 3.",
+      "audioReady": true
+    },
+    {
+      "index": 32,
+      "id": "nr11-m3-captacao",
+      "title": "Permissão de Entrada e Trabalho (PET), Validade e Sinalização",
+      "file": "audios/nr11-m3-captacao.mp3",
+      "text": "Vídeo. Permissão de Entrada e Trabalho (P E T), Validade e Sinalização. Assista ao vídeo para avançar.",
+      "audioReady": true
+    },
+    {
+      "index": 33,
+      "id": "nr33-m3-pet",
+      "title": "Validade, cancelamento e sinalização",
+      "file": "audios/nr33-m3-pet.mp3",
+      "text": "Validade, cancelamento e sinalização. A P E T autoriza a entrada. Ela tem prazo, placa e arquivo. 24 horas: Validade máxima da permissão. 5 anos: Arquivo depois que a P E T encerra. trinta e três ponto cinco ponto doze ponto um: A prorrogação só vale nesta regra. Emita outra P E T se. A entrada atrasou mais de 30 minutos. Entrou ou saiu alguém que não estava na lista. O entorno mudou ou a jornada passou de 12 horas seguidas. Anexo 1: PERIGO - RISCO DE MORTE. Placa obrigatória no ponto de acesso.",
+      "audioReady": true
+    },
+    {
+      "index": 34,
+      "id": "nr33-m3-loto",
+      "title": "Motivos de Cancelamento da PET e Controle de Energias (LOTO)",
+      "file": "audios/nr33-m3-loto.mp3",
+      "text": "Vídeo. Motivos de Cancelamento da P E T e Controle de Energias (L O T O). Assista ao vídeo para avançar.",
+      "audioReady": true
+    },
+    {
+      "index": 35,
+      "id": "nr11-m3-altura",
+      "title": "Avaliação Atmosférica e Sequência Técnica de Medição de Gases",
+      "file": "audios/nr11-m3-altura.mp3",
+      "text": "Vídeo. Avaliação Atmosférica e Sequência Técnica de Medição de Gases. Assista ao vídeo para avançar.",
+      "audioReady": true
+    },
+    {
+      "index": 36,
+      "id": "nr33-m3-medicao",
+      "title": "Ordem da medição e o oxigênio puro",
+      "file": "audios/nr33-m3-medicao.mp3",
+      "text": "Ordem da medição e o oxigênio puro. O Supervisor mede a atmosfera antes da entrada. O monitoramento continua durante o serviço. 1. Oxigênio. É sempre o primeiro teste. 2. Inflamáveis. O L I E. Só depois do oxigênio. 3. Gases tóxicos. Por último, inclusive o C O dois. C O dois até zero vírgula cinco por cento em 8 horas: De um por cento a dois por cento já há sintomas. Oxigênio puro: Não use na ventilação. A atmosfera pode ficar explosiva.",
+      "audioReady": true
+    },
+    {
+      "index": 37,
+      "id": "nr11-m3-paletes",
+      "title": "Sistemas de Ventilação e Proibição de Oxigênio Puro",
+      "file": "audios/nr11-m3-paletes.mp3",
+      "text": "Vídeo. Sistemas de Ventilação e Proibição de Oxigênio Puro. Assista ao vídeo para avançar.",
+      "audioReady": true
+    },
+    {
+      "index": 38,
+      "id": "nr33-m3-desafio",
+      "title": "Pode ou proibido?",
+      "file": "audios/nr33-m3-desafio.mp3",
+      "text": "Pode ou proibido? Não é pergunta de alternativa. Cada carta traz uma situação do módulo: jogue em Pode ou Proibido. Acerte no mínimo três de quatro.",
+      "audioReady": true
+    },
+    {
+      "index": 39,
+      "id": "nr33-m3-sort",
+      "title": "Pode ou proibido?",
+      "file": "audios/nr33-m3-sort.mp3",
+      "text": "Pode ou proibido? Toque no lado certo antes do tempo acabar. Caso um de quatro. Proibido. Pode.",
+      "audioReady": true
+    },
+    {
+      "index": 40,
+      "id": "nr11-m4-capa",
+      "title": "Módulo 4 — Equipamentos (EPI/EPC), Plano de Emergência, APH e Primeiros Socorros",
+      "file": "audios/nr11-m4-capa.mp3",
+      "text": "Módulo 4, Equipamentos (E P I/E P C), Plano de Emergência, A P H e Primeiros Socorros. E P Is e E P Cs, plano de emergência, socorro, primeiros socorros e nós de resgate. Na imagem: Capa do módulo 4.",
+      "audioReady": true
+    },
+    {
+      "index": 41,
+      "id": "nr11-m4-alinhamento",
+      "title": "Equipamentos de Proteção Individual (EPI) e Coletiva (EPC)",
+      "file": "audios/nr11-m4-alinhamento.mp3",
+      "text": "Vídeo. Equipamentos de Proteção Individual (E P I) e Coletiva (E P C). Assista ao vídeo para avançar.",
+      "audioReady": true
+    },
+    {
+      "index": 42,
+      "id": "nr33-m4-kit",
+      "title": "EPCs — Equipamentos de resgate",
+      "file": "audios/nr33-m4-kit.mp3",
+      "text": "E P Cs, Equipamentos de resgate. Os números da lista são os mesmos da foto. 1. Maca envelope. 2. Tripé de resgate. 3. Motor de insuflação. 4. Kit de respiração autônoma. 5. Conjunto de insuflação e exaustão de ar. 6. Detector de gases. 7. Saco de cordas para resgate. Na imagem: Conjunto de E P Cs de resgate numerados de 1 a 7.",
+      "audioReady": true
+    },
+    {
+      "index": 43,
+      "id": "nr11-m4-outros",
+      "title": "Plano de Emergência, Regra do Vigia e Telefones de Socorro",
+      "file": "audios/nr11-m4-outros.mp3",
+      "text": "Vídeo. Plano de Emergência, Regra do Vigia e Telefones de Socorro. Assista ao vídeo para avançar.",
+      "audioReady": true
+    },
+    {
+      "index": 44,
+      "id": "nr33-m4-socorro",
+      "title": "Quem socorre e para onde ligar",
+      "file": "audios/nr33-m4-socorro.mp3",
+      "text": "Quem socorre e para onde ligar. O vigia aciona o plano. Quem está dentro recebe o primeiro cuidado sem piorar a lesão. Regra do vigia: Não entre para resgatar. Acione o plano e chame socorro. Entrar sozinho é proibido. cento e noventa e três: Bombeiros. cento e noventa e dois: SAMU. cento e noventa: Polícia. cento e noventa e nove: Defesa Civil. Hemorragia: Compressão direta primeiro. Torniquete só se falhar ou houver amputação. Queimadura: primeiro grau é vermelhidão, segundo grau tem bolha, terceiro grau carboniza. Fratura: Não alinhe o osso. Imobilize uma articulação acima e uma abaixo.",
+      "audioReady": true
+    },
+    {
+      "index": 45,
+      "id": "nr11-m4-manutencao",
+      "title": "Atendimento Pré-Hospitalar (APH): Hemorragias e Queimaduras",
+      "file": "audios/nr11-m4-manutencao.mp3",
+      "text": "Vídeo. Atendimento Pré-Hospitalar (A P H): Hemorragias e Queimaduras. Assista ao vídeo para avançar.",
+      "audioReady": true
+    },
+    {
+      "index": 46,
+      "id": "nr11-m4-emergencia",
+      "title": "Primeiros Socorros em Fraturas e Prática de Nós de Resgate",
+      "file": "audios/nr11-m4-emergencia.mp3",
+      "text": "Vídeo. Primeiros Socorros em Fraturas e Prática de Nós de Resgate. Assista ao vídeo para avançar.",
+      "audioReady": true
+    },
+    {
+      "index": 47,
+      "id": "nr33-m4-desafio",
+      "title": "Qual é a conduta?",
+      "file": "audios/nr33-m4-desafio.mp3",
+      "text": "Qual é a conduta? Não é pergunta de alternativa. Una cada situação à conduta certa. São quatro pares.",
+      "audioReady": true
+    },
+    {
+      "index": 48,
+      "id": "nr33-m4-match",
+      "title": "Qual é a conduta?",
+      "file": "audios/nr33-m4-match.mp3",
+      "text": "Qual é a conduta? Situação. Conduta.",
+      "audioReady": true
+    },
+    {
+      "index": 49,
+      "id": "nr11-m4-final",
+      "title": "Parabéns",
+      "file": "audios/nr11-m4-final.mp3",
+      "text": "Treinamento concluído. Parabéns. Você concluiu o treinamento de N R trinta e três, Segurança no Trabalho em Espaço Confinado. E P I certo, Vigia do lado de fora e socorro sem agravar a lesão. N R trinta e três. Espaço confinado. Resgate.",
+      "audioReady": true
+    }
+  ]
+}

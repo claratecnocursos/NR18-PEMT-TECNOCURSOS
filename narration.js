@@ -19,7 +19,7 @@
 
   var CONFIG = {
     audioDir: 'audios/',
-    audioVer: 'nr11-2',
+    audioVer: 'nr33-menu',
 
     // espera curta: vários eventos juntos viram uma chamada só
     debounceMs: 300,

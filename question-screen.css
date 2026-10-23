@@ -153,7 +153,7 @@
 .qs-home-card h1 {
   font-family: var(--qs-font-h);
   font-weight: 900;
-  font-size: clamp(18px, 2.1vw, 26px);
+  font-size: clamp(16px, 1.7vw, 22px);
   line-height: 1.15;
   color: #fff;
   margin: 0 0 8px;
