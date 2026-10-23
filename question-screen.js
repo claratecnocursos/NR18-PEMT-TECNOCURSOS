@@ -686,6 +686,18 @@
     if (data.layout === 'figure' && data.image) {
       return figureHTML(data);
     }
+    if (data.layout === 'measure') {
+      return measureHTML(data);
+    }
+    if (data.layout === 'pet') {
+      return petHTML(data);
+    }
+    if (data.layout === 'kit') {
+      return kitHTML(data);
+    }
+    if (data.layout === 'socorro') {
+      return socorroHTML(data);
+    }
     if (Array.isArray(data.groups) && data.groups.length) {
       return placesHTML(data);
     }
@@ -724,6 +736,128 @@
       <article class="qs-screen is-content is-text${dense ? ' is-dense' : ''}${hasGallery ? ' is-gallery' : ''}${fit ? ' is-fit' : ''}${look}" data-qs-root data-type="content">
         <div class="qs-panel qs-panel-text">
           ${head}
+        </div>
+      </article>`;
+  }
+
+  function kitHTML(data) {
+    var gear = (data.gear || []).map(function (g) {
+      return `<li>
+        <span>${esc(g.n || '')}</span>
+        <b>${esc(g.title || '')}</b>
+      </li>`;
+    }).join('');
+    var photo = data.image
+      ? `<figure class="qs-kit-photo">
+          <img src="${esc(data.image)}" alt="${esc(data.imageAlt || 'Equipamentos de resgate')}">
+        </figure>`
+      : '';
+    return `
+      <article class="qs-screen is-content is-text is-kit" data-qs-root data-type="content">
+        <div class="qs-panel qs-panel-text">
+          <h2 class="qs-title">${esc(data.title || '')}</h2>
+          ${data.body ? `<p class="qs-body">${esc(data.body)}</p>` : ''}
+          <div class="qs-kit">
+            <ol class="qs-kit-list">${gear}</ol>
+            ${photo}
+          </div>
+        </div>
+      </article>`;
+  }
+
+  function socorroHTML(data) {
+    var phones = (data.phones || []).map(function (p) {
+      return `<article>
+        <b>${esc(p.n || '')}</b>
+        <span>${esc(p.label || '')}</span>
+      </article>`;
+    }).join('');
+    var rules = (data.rules || []).map(function (r) {
+      return `<article>
+        <b>${esc(r.title || '')}</b>
+        <p>${esc(r.text || '')}</p>
+      </article>`;
+    }).join('');
+    var ban = data.ban || {};
+    return `
+      <article class="qs-screen is-content is-text is-socorro" data-qs-root data-type="content">
+        <div class="qs-panel qs-panel-text">
+          <h2 class="qs-title">${esc(data.title || '')}</h2>
+          ${data.body ? `<p class="qs-body">${esc(data.body)}</p>` : ''}
+          <div class="qs-socorro">
+            <aside class="qs-socorro-ban">
+              <span>${esc(ban.kicker || '')}</span>
+              <b>${esc(ban.title || '')}</b>
+              <p>${esc(ban.text || '')}</p>
+            </aside>
+            <div class="qs-socorro-phones">${phones}</div>
+            <div class="qs-socorro-rules">${rules}</div>
+          </div>
+        </div>
+      </article>`;
+  }
+
+  function petHTML(data) {
+    var facts = (data.facts || []).map(function (f) {
+      return `<article class="qs-pet-fact ${f.tone ? 'is-' + esc(f.tone) : ''}">
+        <b>${esc(f.value || '')}</b>
+        <p>${esc(f.label || '')}</p>
+      </article>`;
+    }).join('');
+    var reasons = (data.reasons || []).map(function (r, i) {
+      return `<article>
+        <span>${esc(r.n || (i + 1))}</span>
+        <p>${esc(r.text || '')}</p>
+      </article>`;
+    }).join('');
+    var sign = data.sign || {};
+    return `
+      <article class="qs-screen is-content is-text is-pet" data-qs-root data-type="content">
+        <div class="qs-panel qs-panel-text">
+          <h2 class="qs-title">${esc(data.title || '')}</h2>
+          ${data.body ? `<p class="qs-body">${esc(data.body)}</p>` : ''}
+          <div class="qs-pet">
+            <div class="qs-pet-facts">${facts}</div>
+            <section class="qs-pet-why">
+              <h3>${esc(data.reasonTitle || 'Nova PET obrigatória')}</h3>
+              <div class="qs-pet-reasons">${reasons}</div>
+            </section>
+            <aside class="qs-pet-sign">
+              <span>${esc(sign.kicker || '')}</span>
+              <div>
+                <b>${esc(sign.title || '')}</b>
+                ${sign.text ? `<p>${esc(sign.text)}</p>` : ''}
+              </div>
+            </aside>
+          </div>
+        </div>
+      </article>`;
+  }
+
+  function measureHTML(data) {
+    var steps = (data.steps || []).map(function (s) {
+      return `<li>
+        <span class="qs-measure-n">${esc(s.n || '')}</span>
+        <b>${esc(s.title || '')}</b>
+        <p>${esc(s.text || '')}</p>
+      </li>`;
+    }).join('');
+    var alerts = (data.alerts || []).map(function (a) {
+      return `<article class="qs-measure-alert ${a.tone === 'ban' ? 'is-ban' : 'is-info'}">
+        <span>${esc(a.kicker || '')}</span>
+        <b>${esc(a.title || '')}</b>
+        <p>${esc(a.text || '')}</p>
+      </article>`;
+    }).join('');
+    return `
+      <article class="qs-screen is-content is-text is-measure" data-qs-root data-type="content">
+        <div class="qs-panel qs-panel-text">
+          <h2 class="qs-title">${esc(data.title || '')}</h2>
+          ${data.body ? `<p class="qs-body">${esc(data.body)}</p>` : ''}
+          <div class="qs-measure">
+            <ol class="qs-measure-steps">${steps}</ol>
+            <div class="qs-measure-alerts">${alerts}</div>
+          </div>
         </div>
       </article>`;
   }
@@ -1223,7 +1357,8 @@
     this.el.addEventListener('click', this._onClick);
 
     var lockedVideo = type === 'video' && !!(this.data.embed || this.data.panda || this.data.video);
-    var gated = type === 'question' || type === 'order' || type === 'match' || type === 'sort' || type === 'reflect' || type === 'compare' || lockedVideo || (type === 'content' && !!(this.data && this.data.steps));
+    var stepSequence = type === 'content' && !!(this.data && this.data.steps && Array.isArray(this.data.items) && this.data.items.length);
+    var gated = type === 'question' || type === 'order' || type === 'match' || type === 'sort' || type === 'reflect' || type === 'compare' || lockedVideo || stepSequence;
     if (!gated) this.state.answered = true;
 
     if (type === 'video' && (this.data.embed || this.data.panda || this.data.youtube || this.data.video)) {
@@ -1234,7 +1369,7 @@
     if (type === 'order') this._bindOrder();
     if (type === 'match') this._bindMatch();
     if (type === 'sort') this._bindSort();
-    if (type === 'content' && this.data && this.data.steps) this._bindSteps();
+    if (type === 'content' && this.data && this.data.steps && Array.isArray(this.data.items) && this.data.items.length) this._bindSteps();
     if (type === 'content' && this.data && this.data.links) this._bindHazard();
     if (type === 'content' && this.data && this.data.layout === 'qualify') this._bindQualify();
     if (type === 'content' && this.data && this.data.spots) this._bindExplore();
@@ -2124,7 +2259,7 @@
           if (fb) {
             fb.hidden = false;
             fb.className = 'qs-sort-fb is-nok';
-            fb.textContent = item.hint || 'Não conforme com a NR-11.';
+            fb.textContent = item.hint || 'Não conforme com a NR-33.';
           }
         }
         goNext(ok);

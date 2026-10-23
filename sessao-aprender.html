@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="referrer" content="no-referrer">
-  <title>NR-11 — Operação de Paleteira Manual</title>
+  <title>NR 33 — Segurança no Trabalho em Espaço Confinado</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="question-screen.css?v=nr33-match3">
+  <link rel="stylesheet" href="question-screen.css?v=nr33-limpeza">
   <style>
     html, body { margin: 0; height: 100%; overflow: hidden; }
   </style>
@@ -166,8 +166,8 @@
 
   <audio id="bg-music" loop preload="metadata" aria-hidden="true"></audio>
 
-  <script src="question-screen-data.js?v=nr33-m2game"></script>
-  <script src="question-screen.js?v=nr33-p14b"></script>
+  <script src="question-screen-data.js?v=nr33-limpeza"></script>
+  <script src="question-screen.js?v=nr33-limpeza"></script>
   <script src="narration-text.js?v=nr11-4"></script>
   <script src="narration.js?v=nr11-2"></script>
   <script>
@@ -242,9 +242,10 @@
   function isGateType(type) {
     return isScoreType(type) || type === 'reflect' || type === 'compare';
   }
-  // ficha com sequência de fotos: a seta só libera depois de ver todas
+  // ficha com sequência de fotos: a seta só libera depois de ver todas.
+  // Um array "steps" de conteúdo estático não entra aqui.
   function isStepsGate(s) {
-    return !!(s && s.type === 'content' && s.steps);
+    return !!(s && s.type === 'content' && s.steps && Array.isArray(s.items) && s.items.length);
   }
   // vídeo com player: só libera o avanço faltando ~8s para o fim
   function isVideoGate(s) {
@@ -540,7 +541,7 @@
   var brandTxt = null;
   var bgMusic = document.getElementById('bg-music');
 
-  if (brandTxt) brandTxt.textContent = (session.meta && session.meta.title) || 'NR-11';
+  if (brandTxt) brandTxt.textContent = (session.meta && session.meta.title) || 'NR 33';
   if (bgMusic) {
     bgMusic.src = (session.meta && session.meta.musicSrc) || 'musica/musica_foco.mp3';
     bgMusic.volume = 0.35;
@@ -829,7 +830,7 @@
     clearAutoAdvance();
     resetQuizState();
     if (qs) { qs.destroy(); qs = null; }
-    if (brandTxt) brandTxt.textContent = (session.meta && session.meta.title) || 'NR-11';
+    if (brandTxt) brandTxt.textContent = (session.meta && session.meta.title) || 'NR 33';
     setChrome(true);
     var i = (focusIndex != null && focusIndex >= 0 && focusIndex < modules.length)
       ? focusIndex
@@ -854,7 +855,7 @@
     }).join('');
     shell.innerHTML =
       '<div class="qs-menu is-single">' +
-        '<p class="qs-menu-brand">' + ((session.meta && session.meta.title) || 'NR-11 — Operação de Paleteira Manual') + '</p>' +
+        '<p class="qs-menu-brand">' + ((session.meta && session.meta.title) || 'NR 33 — Segurança no Trabalho em Espaço Confinado') + '</p>' +
         '<p class="qs-menu-lead">' + lead + '</p>' +
         '<article class="qs-mod-focus">' +
           '<div class="qs-mod-kicker">' + kicker + '</div>' +

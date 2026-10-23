@@ -1,5 +1,5 @@
 /**
- * Conteúdo da Trilha NR-11 — Operação de Paleteira Manual
+ * Conteúdo da Trilha NR 33 — Segurança no Trabalho em Espaço Confinado
  * Tipos: cover | content | quiz-intro | question | finale
  */
 window.QUESTION_SCREEN_SESSION = {
@@ -258,11 +258,11 @@ window.QUESTION_SCREEN_SESSION = {
     {
       id: 3,
       title: "Permissão de Entrada e Trabalho (PET), LOTO, Gases e Ventilação",
-      objective: "Ensinar a captar e estabilizar a carga, escolher o palete, respeitar o piso e estacionar sem bloquear emergência.",
+      objective: "Capacitar o aluno nos procedimentos formais de abertura e gestão da PET, isolamento de energias (LOTO), sinalização de área, medição técnica de gases e operação de ventilação.",
       titleUnlock: {
-        title: "CARGA ESTÁVEL",
-        body: "Você escolhe o palete, transporta na altura certa e não bloqueia saída nem hidrante.",
-        icon: "📦"
+        title: "PET SOB CONTROLE",
+        body: "Você acompanha a validade da PET, o bloqueio das energias, a ordem da medição e a ventilação sem oxigênio puro.",
+        icon: "📋"
       },
       screens: [
         {
@@ -271,111 +271,118 @@ window.QUESTION_SCREEN_SESSION = {
           image: "assets/fotos/capa-modulo3.png",
           imageAlt: "Capa do módulo 3",
           title: "Módulo 3 — Permissão de Entrada e Trabalho (PET), LOTO, Gases e Ventilação",
-          subtitle: "Captação, amarração, altura do solo, paletes de 2 e 4 entradas, piso e onde estacionar."
+          subtitle: "Abertura e gestão da PET, bloqueio LOTO, sinalização, medição de gases e ventilação."
         },
         {
           id: "nr11-m3-captacao",
           type: "video",
           kicker: "Vídeo",
-          title: "Captação, Estabilização e Altura da Carga",
-          playerId: "panda-613f3feb-8556-4cd4-88af-95ac0cd4ed00",
-          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=613f3feb-8556-4cd4-88af-95ac0cd4ed00"
+          title: "Permissão de Entrada e Trabalho (PET), Validade e Sinalização",
+          playerId: "panda-025b5f4e-c9bb-4165-aaa3-45e8a774ab8a",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=025b5f4e-c9bb-4165-aaa3-45e8a774ab8a"
+        },
+        {
+          id: "nr33-m3-pet",
+          type: "content",
+          layout: "pet",
+          title: "Validade, cancelamento e sinalização",
+          body: "A PET autoriza a entrada. Ela tem prazo, placa e arquivo.",
+          facts: [
+            { value: "24h", label: "Validade máxima da permissão.", tone: "hot" },
+            { value: "5 anos", label: "Arquivo depois que a PET encerra.", tone: "purple" },
+            { value: "33.5.12.1", label: "A prorrogação só vale nesta regra.", tone: "soft" }
+          ],
+          reasonTitle: "Emita outra PET se",
+          reasons: [
+            { n: "1", text: "A entrada atrasou mais de 30 minutos." },
+            { n: "2", text: "Entrou ou saiu alguém que não estava na lista." },
+            { n: "3", text: "O entorno mudou ou a jornada passou de 12 horas seguidas." }
+          ],
+          sign: {
+            kicker: "Anexo 1",
+            title: "PERIGO - RISCO DE MORTE",
+            text: "Placa obrigatória no ponto de acesso."
+          }
+        },
+        {
+          id: "nr33-m3-loto",
+          type: "video",
+          kicker: "Vídeo",
+          title: "Motivos de Cancelamento da PET e Controle de Energias (LOTO)",
+          playerId: "panda-dfb96f40-86e2-484e-bd47-93400a28c44e",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=dfb96f40-86e2-484e-bd47-93400a28c44e"
         },
         {
           id: "nr11-m3-altura",
           type: "video",
           kicker: "Vídeo",
-          title: "Regras de Armazenamento e Limites Estruturais do Piso",
-          playerId: "panda-0acc37f0-8d41-4789-97d6-9605e041c175",
-          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=0acc37f0-8d41-4789-97d6-9605e041c175"
+          title: "Avaliação Atmosférica e Sequência Técnica de Medição de Gases",
+          playerId: "panda-9b041031-226c-4213-b934-82acc409aa00",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=9b041031-226c-4213-b934-82acc409aa00"
+        },
+        {
+          id: "nr33-m3-medicao",
+          type: "content",
+          layout: "measure",
+          title: "Ordem da medição e o oxigênio puro",
+          body: "O Supervisor mede a atmosfera antes da entrada. O monitoramento continua durante o serviço.",
+          steps: [
+            { n: "1", title: "Oxigênio", text: "O₂. É sempre o primeiro teste." },
+            { n: "2", title: "Inflamáveis", text: "O LIE. Só depois do oxigênio." },
+            { n: "3", title: "Gases tóxicos", text: "Por último, inclusive o CO₂." }
+          ],
+          alerts: [
+            { tone: "info", kicker: "Limite", title: "CO₂ até 0,5% em 8 horas", text: "De 1% a 2% já há sintomas." },
+            { tone: "ban", kicker: "Proibido", title: "Oxigênio puro", text: "Não use na ventilação. A atmosfera pode ficar explosiva." }
+          ]
         },
         {
           id: "nr11-m3-paletes",
-          type: "content",
-          fit: true,
-          layout: "duo",
-          kicker: "Paletes",
-          title: "Duas entradas ou quatro",
-          body: "O palete é o apoio: uma estrutura com aberturas para os garfos. A entrada muda a manobra.",
-          compare: [
-            { ok: false, label: "Duas entradas", image: "assets/fotos/PALLET%202.png", imageAlt: "Palete de duas entradas", text: "Aberturas em lados opostos. A paleteira só entra por esses lados, e a manobra fica limitada." },
-            { ok: true, label: "Quatro entradas", image: "assets/fotos/PALLET%204.webp", imageAlt: "Palete de quatro entradas", text: "Aberturas nos quatro lados. Os garfos entram em qualquer direção e a manobra no corredor estreito fica mais fácil." }
-          ],
-          note: { label: "Vazio", text: "No máximo 10 paletes sobrepostos para movimentar sem carga." }
-        },
-        {
-          id: "nr11-m3-piso",
           type: "video",
           kicker: "Vídeo",
-          title: "Estacionamento Seguro e Desobstrução de Emergências",
-          playerId: "panda-6891e9bf-1d28-4e12-abe6-1a2907a85962",
-          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=6891e9bf-1d28-4e12-abe6-1a2907a85962"
+          title: "Sistemas de Ventilação e Proibição de Oxigênio Puro",
+          playerId: "panda-b952cbf4-8b11-486a-9a1c-3a1d94dbe696",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=b952cbf4-8b11-486a-9a1c-3a1d94dbe696"
         },
         {
-          id: "nr11-m3-estacionar",
-          type: "content",
-          fit: true,
-          layout: "spots",
-          kicker: "Estacionamento",
-          title: "Onde a paleteira pode parar",
-          body: "Estacione só em local permitido e disponível. O resto do galpão não é vaga.",
-          items: [
-            { icon: "🚪", title: "Saída", text: "Emergência e rota de fuga ficam livres." },
-            { icon: "🧯", title: "Incêndio", text: "Hidrante e extintor sem nada na frente." },
-            { icon: "⚡", title: "Energia", text: "Painel elétrico com acesso livre." },
-            { icon: "🚶", title: "Circulação", text: "Via de pedestre, rua e prateleira desobstruídas." }
-          ],
-          quote: "Se alguém precisa passar ou combater um incêndio, a paleteira não pode estar no caminho."
-        },
-        {
-          id: "nr11-m3-desafio",
+          id: "nr33-m3-desafio",
           type: "quiz-intro",
-          title: "Verdadeiro ou falso",
-          body: "Uma frase por vez. Toque em <strong>Verdadeiro</strong> ou <strong>Falso</strong>. São 6 frases da carga, do palete, do piso e do estacionamento. Acerte pelo menos <strong>4</strong>.",
-          count: 6,
-          minCorrect: 4,
-          icon: "✅"
+          title: "Pode ou proibido?",
+          body: "Não é pergunta de alternativa. Cada carta traz uma situação do módulo: jogue em <strong>Pode</strong> ou <strong>Proibido</strong>. Acerte no mínimo <strong>3</strong> de <strong>4</strong>.",
+          count: 4,
+          minCorrect: 3,
+          icon: "🎮"
         },
         {
-          id: "nr11-m3-vf",
+          id: "nr33-m3-sort",
           type: "sort",
-          title: "Verdadeiro ou falso",
-          body: "Uma frase por vez. Toque no botão certo.",
-          time: 75,
-          minCorrect: 4,
-          review: "Altura da carga, palete, piso e estacionamento",
-          left: { id: "falso", label: "Falso", icon: "✕" },
-          right: { id: "verdadeiro", label: "Verdadeiro", icon: "✓" },
+          title: "Pode ou proibido?",
+          body: "Toque no lado certo antes do tempo acabar.",
+          time: 45,
+          minCorrect: 3,
+          review: "PET, ordem da medição e ventilação sem oxigênio puro",
+          left: { id: "proibido", label: "Proibido", icon: "🚫" },
+          right: { id: "pode", label: "Pode", icon: "✓" },
           items: [
             {
-              text: "No piso regular, a base da carga fica a 15–20 cm do solo.",
-              bin: "verdadeiro",
-              hint: "Verdade. Essa é a altura de transporte."
+              text: "Ventilar só com ar atmosférico limpo e deixar o sistema ligado o tempo todo.",
+              bin: "pode",
+              hint: "A purga é mecânica, com ar fresco. A ventilação fica ligada durante todo o serviço."
             },
             {
-              text: "Peça solta pode seguir sem fitilho nem fita stretch.",
-              bin: "falso",
-              hint: "Falso. Peça solta precisa de amarração."
+              text: "Usar oxigênio puro para ventilar ou purgar o espaço confinado.",
+              bin: "proibido",
+              hint: "Oxigênio puro cria atmosfera hiper-enriquecida. Uma fagulha pode causar explosão."
             },
             {
-              text: "Paletes de madeira vazios: no máximo 10 empilhados.",
-              bin: "verdadeiro",
-              hint: "Verdade. O limite é de 10 paletes vazios."
+              text: "Medir primeiro o oxigênio, depois os inflamáveis e por último os gases tóxicos.",
+              bin: "pode",
+              hint: "Essa é a ordem técnica: O₂, inflamáveis e LIE, gases tóxicos."
             },
             {
-              text: "O palete de duas entradas abre nos quatro lados.",
-              bin: "falso",
-              hint: "Falso. Duas entradas só abrem em lados opostos."
-            },
-            {
-              text: "No corredor, deixe pelo menos 50 cm livres.",
-              bin: "verdadeiro",
-              hint: "Verdade. Esse espaço livre é obrigatório."
-            },
-            {
-              text: "Pode estacionar na frente da saída de emergência.",
-              bin: "falso",
-              hint: "Falso. Saída, hidrante e extintor ficam livres."
+              text: "Entrar com uma PET aberta há mais de 24 horas, sem emitir outra.",
+              bin: "proibido",
+              hint: "A PET vale no máximo 24 horas. Fora do prazo, é preciso emitir uma nova."
             }
           ]
         }
@@ -384,10 +391,10 @@ window.QUESTION_SCREEN_SESSION = {
     {
       id: 4,
       title: "Equipamentos (EPI/EPC), Plano de Emergência, APH e Primeiros Socorros",
-      objective: "Reconhecer falhas que causam acidente, não consertar o equipamento por conta própria, usar os EPIs e agir no alarme de incêndio.",
+      objective: "Instruir sobre a seleção de EPIs/EPCs, os procedimentos de emergência e resgate, a rede de contatos de socorro, os primeiros socorros em trauma/queimaduras e a confecção de nós de resgate.",
       titleUnlock: {
-        title: "PRONTO PARA A EMERGÊNCIA",
-        body: "Você alinha o palete, usa os EPIs, não faz conserto caseiro e sabe o que fazer no alarme.",
+        title: "PRONTO PARA O RESGATE",
+        body: "Você escolhe o equipamento certo, aciona o socorro e não entra no espaço no lugar do vigia.",
         icon: "⛑️"
       },
       screens: [
@@ -397,108 +404,115 @@ window.QUESTION_SCREEN_SESSION = {
           image: "assets/fotos/capa-modulo4.png",
           imageAlt: "Capa do módulo 4",
           title: "Módulo 4 — Equipamentos (EPI/EPC), Plano de Emergência, APH e Primeiros Socorros",
-          subtitle: "Palete mal alinhado, manutenção, equipamentos de proteção e o que fazer no incêndio."
+          subtitle: "EPIs e EPCs, plano de emergência, socorro, primeiros socorros e nós de resgate."
         },
         {
           id: "nr11-m4-alinhamento",
           type: "video",
           kicker: "Vídeo",
-          title: "Riscos Operacionais e Alinhamento Incorreto da Carga",
-          playerId: "panda-eec3f7eb-ecf6-466f-a8fc-5d167fc3f1c0",
-          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=eec3f7eb-ecf6-466f-a8fc-5d167fc3f1c0"
+          title: "Equipamentos de Proteção Individual (EPI) e Coletiva (EPC)",
+          playerId: "panda-3ce74810-23e4-458e-bfc7-bcee90f481be",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=3ce74810-23e4-458e-bfc7-bcee90f481be"
+        },
+        {
+          id: "nr33-m4-kit",
+          type: "content",
+          layout: "kit",
+          title: "EPCs — Equipamentos de resgate",
+          body: "Os números da lista são os mesmos da foto.",
+          image: "assets/fotos/EPCS.png",
+          imageAlt: "Conjunto de EPCs de resgate numerados de 1 a 7",
+          gear: [
+            { n: "1", title: "Maca envelope" },
+            { n: "2", title: "Tripé de resgate" },
+            { n: "3", title: "Motor de insuflação" },
+            { n: "4", title: "Kit de respiração autônoma" },
+            { n: "5", title: "Conjunto de insuflação e exaustão de ar" },
+            { n: "6", title: "Detector de gases" },
+            { n: "7", title: "Saco de cordas para resgate" }
+          ]
         },
         {
           id: "nr11-m4-outros",
           type: "video",
           kicker: "Vídeo",
-          title: "Manutenção do Equipamento e Comunicação de Avarias",
-          playerId: "panda-603b1fdb-6204-4bc5-90ea-df90d2ff44bd",
-          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=603b1fdb-6204-4bc5-90ea-df90d2ff44bd"
+          title: "Plano de Emergência, Regra do Vigia e Telefones de Socorro",
+          playerId: "panda-4730945b-53db-4cd2-84a6-451bade159c2",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=4730945b-53db-4cd2-84a6-451bade159c2"
+        },
+        {
+          id: "nr33-m4-socorro",
+          type: "content",
+          layout: "socorro",
+          title: "Quem socorre e para onde ligar",
+          body: "O vigia aciona o plano. Quem está dentro recebe o primeiro cuidado sem piorar a lesão.",
+          ban: {
+            kicker: "Regra do vigia",
+            title: "Não entre para resgatar.",
+            text: "Acione o plano e chame socorro. Entrar sozinho é proibido."
+          },
+          phones: [
+            { n: "193", label: "Bombeiros" },
+            { n: "192", label: "SAMU" },
+            { n: "190", label: "Polícia" },
+            { n: "199", label: "Defesa Civil" }
+          ],
+          rules: [
+            { title: "Hemorragia", text: "Compressão direta primeiro. Torniquete só se falhar ou houver amputação." },
+            { title: "Queimadura", text: "1º grau é vermelhidão, 2º grau tem bolha, 3º grau carboniza." },
+            { title: "Fratura", text: "Não alinhe o osso. Imobilize uma articulação acima e uma abaixo." }
+          ]
         },
         {
           id: "nr11-m4-manutencao",
           type: "video",
           kicker: "Vídeo",
-          title: "Equipamentos de Proteção Individual (EPIs) Obrigatórios",
-          playerId: "panda-a23b1184-73a5-41f8-af65-258842e0f049",
-          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=a23b1184-73a5-41f8-af65-258842e0f049"
+          title: "Atendimento Pré-Hospitalar (APH): Hemorragias e Queimaduras",
+          playerId: "panda-c71808d4-f387-428d-9562-c81d1812df4a",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=c71808d4-f387-428d-9562-c81d1812df4a"
         },
         {
           id: "nr11-m4-emergencia",
           type: "video",
           kicker: "Vídeo",
-          title: "Procedimentos de Emergência e Combate a Incêndios",
-          playerId: "panda-24489907-3d57-44ef-ad62-d74fb1947a5c",
-          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=24489907-3d57-44ef-ad62-d74fb1947a5c"
+          title: "Primeiros Socorros em Fraturas e Prática de Nós de Resgate",
+          playerId: "panda-35e552b2-2fb9-43d2-94fb-a2918f905eba",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=35e552b2-2fb9-43d2-94fb-a2918f905eba"
         },
         {
-          id: "nr11-m4-incendio",
-          type: "content",
-          fit: true,
-          kicker: "Emergência",
-          title: "Alarme de incêndio",
-          items: [
-            { n: "1", title: "Pare", text: "Ao ouvir o alarme, estacione imediatamente em local seguro." },
-            { n: "2", title: "Baixe a carga", text: "Desça a carga e deixe a passagem livre." },
-            { n: "3", title: "Saia e acione", text: "Conheça o extintor da área e saiba chamar os brigadistas." }
-          ],
-          note: { label: "Princípio de incêndio", text: "Peça ajuda e comunique a Brigada. Só inicie o combate com extintor se você for brigadista treinado, usando pó químico ou CO2, o adequado ao fogo." }
-        },
-        {
-          id: "nr11-m4-desafio",
+          id: "nr33-m4-desafio",
           type: "quiz-intro",
-          title: "Desafio NR-11 — Módulo 4",
-          count: 3,
-          minCorrect: 2,
+          title: "Qual é a conduta?",
+          body: "Não é pergunta de alternativa. Una cada situação à conduta certa. São <strong>4</strong> pares.",
+          count: 4,
+          minCorrect: 4,
           icon: "🎮"
         },
         {
-          id: "nr11-m4-p1",
-          type: "question",
-          icon: "📦",
-          image: "assets/fotos/m4p1.png",
-          imageAlt: "Palete desalinhado sobre a paleteira, com caixas prestes a tombar",
-          question: "O que acontece se os garfos não entram até a base do palete?",
-          alternatives: [
-            { id: "a", text: "A carga fica mais estável, porque sobra espaço", correct: false },
-            { id: "b", text: "O palete pode desequilibrar e tombar", correct: true },
-            { id: "c", text: "Só reduz a velocidade, sem risco de queda", correct: false },
-            { id: "d", text: "A paleteira trava sozinha e avisa o operador", correct: false }
-          ],
-          explanation: "Garfo que não entra até o fim deixa folga. A carga desequilibra e o palete pode tombar.",
-          review: "O encaixe dos garfos"
-        },
-        {
-          id: "nr11-m4-p2",
-          type: "question",
-          icon: "🦺",
-          image: "assets/fotos/m4p2.png",
-          imageAlt: "Operador de capacete, colete e botina conduzindo a paleteira com carga estável",
-          question: "Qual EPI vale o turno inteiro na operação da paleteira?",
-          alternatives: [
-            { id: "a", text: "Só luvas de malha, sem botina", correct: false },
-            { id: "b", text: "Botina com biqueira, capacete com jugular e luvas", correct: true },
-            { id: "c", text: "Capacete sem jugular e sandália", correct: false },
-            { id: "d", text: "Avental e óculos escuros", correct: false }
-          ],
-          explanation: "A empresa fornece e exige botina com biqueira, capacete com jugular e luvas durante todo o turno. Material pesado ou abrasivo pede luva de raspa.",
-          review: "Os EPIs obrigatórios"
-        },
-        {
-          id: "nr11-m4-p3",
-          type: "question",
-          icon: "🚨",
-          image: "assets/fotos/m4p3.png",
-          imageAlt: "Alarme de incêndio aceso no corredor, com o operador ao lado da paleteira",
-          question: "Ao ouvir o alarme de incêndio, qual é a conduta correta?",
-          alternatives: [
-            { id: "a", text: "Deixar a paleteira no corredor com a carga alta", correct: false },
-            { id: "b", text: "Estacionar em local seguro, baixar a carga e chamar a brigada", correct: true },
-            { id: "c", text: "Qualquer pessoa começa o combate com o extintor", correct: false },
-            { id: "d", text: "Empurrar a carga até a saída de emergência", correct: false }
-          ],
-          explanation: "Estacione em local seguro, baixe a carga e deixe a saída livre. Só o brigadista treinado inicia o combate, com pó químico ou CO2.",
-          review: "O alarme de incêndio"
+          id: "nr33-m4-match",
+          type: "match",
+          title: "Qual é a conduta?",
+          leftTitle: "Situação",
+          rightTitle: "Conduta",
+          review: "EPI, regra do Vigia, hemorragia e fratura",
+          pairs: [
+            {
+              ex: "Falta oxigênio ou a toxina está alta. Máscara simples não protege.",
+              body: "Ar autônomo"
+            },
+            {
+              ex: "Acidente lá dentro. O Vigia dá o alarme e chama o resgate.",
+              body: "Não entra"
+            },
+            {
+              ex: "Hemorragia profunda. O torniquete só entra se a compressão falhar.",
+              body: "Compressão"
+            },
+            {
+              ex: "Fratura fechada ou exposta. O osso não volta para o lugar.",
+              body: "Imobilizar"
+            }
+          ]
         },
         {
           id: "nr11-m4-final",
@@ -507,9 +521,9 @@ window.QUESTION_SCREEN_SESSION = {
           kicker: "Conclusão",
           eyebrow: "Treinamento concluído",
           title: "Parabéns",
-          body: "Você concluiu o treinamento NR-11 de operação de paleteira manual.",
-          quote: "Carteirinha válida, checklist feito, carga estável e passagem livre.",
-          chips: ["NR-11", "Paleteira manual", "2.500 kg"]
+          body: "Você concluiu o treinamento de NR-33 — Segurança no Trabalho em Espaço Confinado.",
+          quote: "EPI certo, Vigia do lado de fora e socorro sem agravar a lesão.",
+          chips: ["NR-33", "Espaço confinado", "Resgate"]
         }
       ]
     }
