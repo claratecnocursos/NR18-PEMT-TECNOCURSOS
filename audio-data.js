@@ -22,6 +22,11 @@ function ttsSpeak(text) {
   t = t.replace(/[\u2014\u2013]/g, ', ');
   t = t.replace(/\bNR[-\s]?12\b/gi, 'N R doze');
   t = t.replace(/\bNR[-\s]?33\b/gi, 'N R trinta e três');
+  t = t.replace(/\bNR[-\s]?18\b/gi, 'N R dezoito');
+  t = t.replace(/\bNR[-\s]?06\b/gi, 'N R zero seis');
+  t = t.replace(/\bPEMT\b/g, 'P E M T');
+  t = t.replace(/\bPTA\b/g, 'P T A');
+  t = t.replace(/\bSPIQ\b/g, 'S P I Q');
   t = t.replace(/\bNR[-\s]?11\b/gi, 'N R onze');
   t = t.replace(/\bPGR\b/g, 'P G R');
   t = t.replace(/\bPET\b/g, 'P E T');

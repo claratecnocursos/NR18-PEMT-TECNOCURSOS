@@ -667,7 +667,27 @@
       </article>`;
   }
 
+  function modelsHTML(data) {
+    var lines = (Array.isArray(data.lines) ? data.lines : [])
+      .map(function (line) { return esc(line); })
+      .join('<br>');
+    var accent = data.accent ? '<em>' + esc(data.accent) + '</em>' : '';
+    return `
+      <article class="qs-screen is-content is-models" data-qs-root data-type="content">
+        <div class="qs-models">
+          ${data.kicker ? `<span class="qs-models-pill">${esc(data.kicker)}</span>` : ''}
+          <h2 class="qs-models-title">${lines}${accent ? '<br>' + accent : ''}</h2>
+          <figure class="qs-models-photo">
+            ${mediaHTML(data, { contain: true })}
+          </figure>
+        </div>
+      </article>`;
+  }
+
   function contentHTML(data) {
+    if (data.layout === 'models') {
+      return modelsHTML(data);
+    }
     if (data.layout === 'qualify') {
       return qualifyHTML(data);
     }
@@ -1072,25 +1092,27 @@
 
   function sortHTML(data) {
     var items = Array.isArray(data.items) ? data.items : [];
+    var vf = !!data.vf;
     var left = data.left || { id: 'nok', label: 'Não conforme', icon: '✕' };
     var right = data.right || { id: 'ok', label: 'Conforme', icon: '✓' };
+    var noun = vf ? 'Frase' : 'Caso';
     return `
-      <article class="qs-screen is-content is-sort is-timed" data-qs-root data-type="sort">
+      <article class="qs-screen is-content is-sort is-timed${vf ? ' is-vf' : ''}" data-qs-root data-type="sort">
         <div class="qs-qbar-wrap"><div class="qs-qbar"><i data-qs-timer></i></div></div>
         <header class="qs-sort-head">
-          <h2 class="qs-title">${esc(data.title || 'Inspeção')}</h2>
+          <h2 class="qs-title">${esc(data.title || (vf ? 'Verdadeiro ou falso' : 'Inspeção'))}</h2>
           ${data.body ? `<p class="qs-body">${esc(data.body)}</p>` : ''}
-          <p class="qs-sort-progress" data-qs-sort-progress>Caso 1 de ${items.length}</p>
+          <p class="qs-sort-progress" data-qs-sort-progress>${noun} 1 de ${items.length}</p>
         </header>
         <div class="qs-sort-stage">
           <p class="qs-sort-card" data-qs-sort-card></p>
         </div>
         <div class="qs-sort-bins">
-          <button type="button" class="qs-sort-bin is-nok" data-qs-sort-bin="${esc(left.id)}">
+          <button type="button" class="qs-sort-bin ${vf ? 'is-false' : 'is-nok'}" data-qs-sort-bin="${esc(left.id)}">
             <span aria-hidden="true">${esc(left.icon || '✕')}</span>
             <b>${esc(left.label)}</b>
           </button>
-          <button type="button" class="qs-sort-bin is-ok" data-qs-sort-bin="${esc(right.id)}">
+          <button type="button" class="qs-sort-bin ${vf ? 'is-true' : 'is-ok'}" data-qs-sort-bin="${esc(right.id)}">
             <span aria-hidden="true">${esc(right.icon || '✓')}</span>
             <b>${esc(right.label)}</b>
           </button>
@@ -1136,6 +1158,10 @@
       ? (passed
         ? 'Você montou a ordem certa.'
         : 'A ordem ainda não fechou. Tente de novo: EPI, carga, avaria e alarme.')
+      : data.mode === 'vf'
+      ? (passed
+        ? ('Você acertou <strong>' + hits + '</strong> de <strong>' + total + '</strong> frases.')
+        : ('Você acertou <strong>' + hits + '</strong> de <strong>' + total + '</strong>. É necessário acertar pelo menos <strong>' + min + '</strong>. Revise os vídeos e tente de novo.'))
       : data.mode === 'sort'
       ? (passed
         ? ('Você acertou <strong>' + hits + '</strong> de <strong>' + total + '</strong> situações.')
@@ -2166,6 +2192,8 @@
   QuestionScreen.prototype._bindSort = function () {
     var self = this;
     var deck = shuffleMixedBins((this.data.items || []).slice());
+    var vf = !!self.data.vf;
+    var noun = vf ? 'Frase' : 'Caso';
     var index = 0;
     var moving = false;
     var hits = 0;
@@ -2183,7 +2211,7 @@
         void card.offsetWidth;
         card.classList.add('is-in');
       }
-      if (prog) prog.textContent = 'Caso ' + (index + 1) + ' de ' + deck.length;
+      if (prog) prog.textContent = noun + ' ' + (index + 1) + ' de ' + deck.length;
       if (fb) {
         fb.hidden = true;
         fb.textContent = '';
@@ -2206,7 +2234,9 @@
         fb.textContent = timedOut && hits < deck.length
           ? ('Tempo esgotado. Você acertou ' + hits + ' de ' + deck.length + '.')
           : (passed
-            ? ('Inspeção concluída — ' + hits + ' de ' + deck.length + ' no lugar certo.')
+            ? (vf
+              ? ('Você acertou ' + hits + ' de ' + deck.length + '.')
+              : ('Inspeção concluída — ' + hits + ' de ' + deck.length + ' no lugar certo.'))
             : ('Você acertou ' + hits + ' de ' + deck.length + '.'));
       }
       self.el.querySelectorAll('[data-qs-sort-bin]').forEach(function (btn) {
@@ -2259,7 +2289,7 @@
           if (fb) {
             fb.hidden = false;
             fb.className = 'qs-sort-fb is-nok';
-            fb.textContent = item.hint || 'Não conforme com a NR-33.';
+            fb.textContent = item.hint || (vf ? 'Essa frase é do outro lado.' : 'Não conforme com a NR-33.');
           }
         }
         goNext(ok);

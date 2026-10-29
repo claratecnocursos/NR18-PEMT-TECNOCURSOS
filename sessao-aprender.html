@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="referrer" content="no-referrer">
-  <title>NR33 Treinamento para Trabalhador Autorizado e Vigia em Espaços Confinados</title>
+  <title>NR 18 — Treinamento de PTA / PEMT</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="question-screen.css?v=nr33-home-title">
+  <link rel="stylesheet" href="question-screen.css?v=nr18-vf">
   <style>
     html, body { margin: 0; height: 100%; overflow: hidden; }
   </style>
@@ -28,8 +28,8 @@
       <div class="qs-home-inner">
         <div class="qs-home-card">
           <div class="qs-home-tag">SEGURANÇA DO TRABALHO</div>
-          <h1><em>NR33</em><br>Treinamento para Trabalhador Autorizado e Vigia em Espaços Confinados</h1>
-          <p>Norma e riscos, capacitação da equipe, PET e gases, EPIs e primeiros socorros</p>
+          <h1><em>NR18</em><br>Treinamento de PTA — Plataforma de Trabalho Aéreo</h1>
+          <p>Fundamentos e tipologia, checklist diário, operação segura, proteção contra quedas</p>
           <div class="qs-home-badges">
             <div class="qs-home-badge">
               <div>
@@ -59,7 +59,7 @@
       </div>
       <div class="qs-wave" aria-hidden="true">
         <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-          <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(255, 0, 110, 0.45)" />
+          <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(255, 165, 0, 0.45)" />
         </svg>
       </div>
     </section>
@@ -127,7 +127,7 @@
 
     <div class="qs-wave qs-wave-session" id="sessionWave" aria-hidden="true" hidden>
       <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-        <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(255, 0, 110, 0.45)" />
+        <path d="M0,55 C480,10 960,90 1440,40 L1440,100 L0,100 Z" fill="rgba(255, 165, 0, 0.45)" />
       </svg>
     </div>
   </div>
@@ -166,8 +166,8 @@
 
   <audio id="bg-music" loop preload="metadata" aria-hidden="true"></audio>
 
-  <script src="question-screen-data.js?v=nr33-limpeza"></script>
-  <script src="question-screen.js?v=nr33-limpeza"></script>
+  <script src="question-screen-data.js?v=nr18-vf5"></script>
+  <script src="question-screen.js?v=nr18-vf"></script>
   <script src="narration-text.js?v=nr33-menu"></script>
   <script src="narration.js?v=nr33-menu"></script>
   <script>
@@ -207,7 +207,7 @@
           s.type === 'compare' ? 'Compare' :
           s.type === 'order' ? 'Ordenar' :
           s.type === 'match' ? 'Associação' :
-          s.type === 'sort' ? 'Inspeção' :
+          s.type === 'sort' ? (s.vf ? 'Verdadeiro ou falso' : 'Inspeção') :
           s.type === 'finale' ? 'Conclusão' :
           s.type
         )
@@ -541,7 +541,7 @@
   var brandTxt = null;
   var bgMusic = document.getElementById('bg-music');
 
-  if (brandTxt) brandTxt.textContent = (session.meta && session.meta.title) || 'NR 33';
+  if (brandTxt) brandTxt.textContent = (session.meta && session.meta.title) || 'NR 18 — PEMT/PTA';
   if (bgMusic) {
     bgMusic.src = (session.meta && session.meta.musicSrc) || 'musica/musica_foco.mp3';
     bgMusic.volume = 0.35;
@@ -830,7 +830,7 @@
     clearAutoAdvance();
     resetQuizState();
     if (qs) { qs.destroy(); qs = null; }
-    if (brandTxt) brandTxt.textContent = (session.meta && session.meta.title) || 'NR 33';
+    if (brandTxt) brandTxt.textContent = (session.meta && session.meta.title) || 'NR 18 — PEMT/PTA';
     setChrome(true);
     var i = (focusIndex != null && focusIndex >= 0 && focusIndex < modules.length)
       ? focusIndex
@@ -855,7 +855,7 @@
     }).join('');
     shell.innerHTML =
       '<div class="qs-menu is-single">' +
-        '<p class="qs-menu-brand">' + ((session.meta && session.meta.title) || 'NR 33 — Segurança no Trabalho em Espaço Confinado') + '</p>' +
+        '<p class="qs-menu-brand">' + ((session.meta && session.meta.title) || 'NR 18 — PEMT/PTA') + '</p>' +
         '<p class="qs-menu-lead">' + lead + '</p>' +
         '<article class="qs-mod-focus">' +
           '<div class="qs-mod-kicker">' + kicker + '</div>' +
@@ -1164,7 +1164,7 @@
     if (s.type === 'sort' && Array.isArray(s.items) && s.items.length) {
       quizState.total = s.items.length;
       if (s.minCorrect != null) quizState.minCorrect = Number(s.minCorrect);
-      quizState.mode = 'sort';
+      quizState.mode = s.vf ? 'vf' : 'sort';
       quizState.active = true;
     }
     if (s.type === 'match' && Array.isArray(s.pairs) && s.pairs.length) {

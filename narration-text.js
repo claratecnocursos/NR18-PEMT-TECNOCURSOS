@@ -17,8 +17,8 @@
   // "100%" vira extenso para a voz não ler "por cento" errado.
   var HOME_TEXT = [
     'Segurança do Trabalho.',
-    'N R trinta e três. Treinamento para Trabalhador Autorizado e Vigia em Espaços Confinados.',
-    'Norma e riscos, capacitação da equipe, PET e gases, EPIs e primeiros socorros.',
+    'N R dezoito. Treinamento de P T A, Plataforma de Trabalho Aéreo.',
+    'Fundamentos e tipologia, checklist diário, operação segura, proteção contra quedas.',
     'Quatro módulos completos. Treinamento cem por cento online.',
     'Toque em iniciar o treinamento.'
   ].join(' ');
@@ -58,6 +58,13 @@
       .replace(/\s*—\s*/g, ', ')
       .replace(/\bNR-11\b/g, 'N R onze')
       .replace(/\bNR-33\b/g, 'N R trinta e três')
+      .replace(/\bNR-18\b/g, 'N R dezoito')
+      .replace(/\bNR 18\b/g, 'N R dezoito')
+      .replace(/\bNR-06\b/g, 'N R zero seis')
+      .replace(/\bNR 06\b/g, 'N R zero seis')
+      .replace(/\bPEMT\b/g, 'P E M T')
+      .replace(/\bPTA\b/g, 'P T A')
+      .replace(/\bSPIQ\b/g, 'S P I Q')
       .replace(/\bEPIs\b/g, 'E P Is')
       .replace(/\bEPI\b/g, 'E P I')
       .replace(/\bASO\b/g, 'A S O')
@@ -291,7 +298,7 @@
     var n = nums[moduleId] || String(moduleId);
     var total = nums[mods.length] || String(mods.length);
     var finished = variant === 'done' || variant === 'done-first';
-    var parts = ['N R trinta e três, Segurança no Trabalho em Espaço Confinado.'];
+    var parts = ['N R dezoito, P E M T, P T A.'];
     if (finished) parts.push('Você finalizou os módulos. Toque para revisar o Módulo ' + n + '.');
     else parts.push('Um módulo por vez. Ao concluir, o próximo é liberado.');
     parts.push(variant === 'done-first' ? 'Treinamento concluído.' : 'Você está aqui.');
@@ -306,7 +313,7 @@
     var mods = (session && session.modules) || [];
     var nums = ['', 'um', 'dois', 'três', 'quatro'];
     var parts = [
-      'N R trinta e três, Segurança no Trabalho em Espaço Confinado.',
+      'N R dezoito, P E M T, P T A.',
       'Um módulo por vez. Ao concluir, o próximo é liberado.'
     ];
     if (nextModule) {

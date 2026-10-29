@@ -1,22 +1,22 @@
 /**
- * Conteúdo da Trilha NR 33 — Segurança no Trabalho em Espaço Confinado
+ * Conteúdo da Trilha NR 18 — PEMT/PTA
  * Tipos: cover | content | quiz-intro | question | finale
  */
 window.QUESTION_SCREEN_SESSION = {
   meta: {
-    title: "NR 33 — Segurança no Trabalho em Espaço Confinado",
+    title: "NR 18 — PEMT/PTA",
     brand: "TecnoCursos",
     musicSrc: "musica/musica_foco.mp3"
   },
   modules: [
     {
       id: 1,
-      title: "Fundamentos Legais, Caracterização e Gerenciamento de Riscos",
-      objective: "Apresentar o embasamento normativo da NR-33, conceituar tecnicamente o espaço confinado e as atmosferas perigosas, e ensinar a metodologia de identificação de perigos e causas de acidentes.",
+      title: "Fundamentos Legais, Normativos e Tipologia das PEMT/PTA",
+      objective: "Capacitar o aluno sobre a sustentação legal da NR 18 (e seu histórico regulamentar), a definição técnica formal de PEMT/PTA, o escopo de aplicação, as responsabilidades de fabricantes, locadores e fornecedores, e a classificação detalhada dos modelos de plataformas.",
       titleUnlock: {
-        title: "RISCOS MAPEADOS",
-        body: "Você reconhece os riscos do espaço confinado e a diferença entre ato inseguro e condição insegura.",
-        icon: "🛡️"
+        title: "FRASES NO LUGAR",
+        body: "Você separou o que a NR 18 afirma do que ela não permite.",
+        icon: "✓"
       },
       screens: [
         {
@@ -24,121 +24,96 @@ window.QUESTION_SCREEN_SESSION = {
           type: "cover",
           image: "assets/fotos/capa-modulo1.png",
           imageAlt: "Capa do módulo 1",
-          title: "Módulo 1 — Fundamentos Legais, Caracterização e Gerenciamento de Riscos",
-          subtitle: "Embasamento normativo da NR-33, conceito de espaço confinado e atmosferas perigosas, e identificação de perigos e causas de acidentes."
+          title: "Módulo 1 — Fundamentos Legais, Normativos e Tipologia das PEMT/PTA",
+          subtitle: "Legislação da NR 18, definição de PEMT/PTA, deveres de fornecedores e modelos de plataforma."
         },
         {
-          id: "nr11-m1-objetivo",
+          id: "nr18-m1-historico",
           type: "video",
           kicker: "Vídeo",
-          title: "Legislação, Objetivo e Definição de Espaço Confinado",
-          playerId: "panda-0de8b1fa-97b4-47d7-bcc0-dc00b7d88cb3",
-          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=0de8b1fa-97b4-47d7-bcc0-dc00b7d88cb3"
+          title: "Introdução à NR 18 e o Histórico da Norma",
+          playerId: "panda-4aee45e2-0279-4b9c-8092-78acee241508",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=4aee45e2-0279-4b9c-8092-78acee241508"
         },
         {
-          id: "nr11-m1-nr11",
+          id: "nr18-m1-escopo",
+          type: "video",
+          kicker: "Vídeo",
+          title: "O que é uma PEMT/PTA e seu Escopo de Aplicação",
+          playerId: "panda-c6edebb9-d386-40a3-97c6-ad023d89d3c4",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=c6edebb9-d386-40a3-97c6-ad023d89d3c4"
+        },
+        {
+          id: "nr18-m1-fornecedor",
+          type: "video",
+          kicker: "Vídeo",
+          title: "Deveres do Fornecedor, Locador e Regras dos Manuais",
+          playerId: "panda-842b4fb0-6b06-4013-a637-169d86851003",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=842b4fb0-6b06-4013-a637-169d86851003"
+        },
+        {
+          id: "nr18-m1-plataformas",
           type: "content",
-          title: "Exemplos de espaços confinados",
-          body: "Toque na foto para ver o próximo exemplo.",
-          stack: [
-            { image: "assets/fotos/espaço 1.png", imageAlt: "Espaço 1", caption: "Espaço 1" },
-            { image: "assets/fotos/espaço 2.png", imageAlt: "Espaço 2", caption: "Espaço 2" },
-            { image: "assets/fotos/espaço 3.png", imageAlt: "Espaço 3", caption: "Espaço 3" }
-          ]
+          layout: "models",
+          kicker: "Equipamentos",
+          eyebrow: "Equipamentos",
+          title: "Modelos de Plataformas Elevatórias Móveis de Trabalho",
+          lines: ["Modelos de Plataformas", "Elevatórias"],
+          accent: "Móveis de Trabalho",
+          image: "assets/fotos/plataformas.jpg",
+          imageAlt: "Cinco modelos: Mastro, Telescópica, Tesoura, Unipessoal e Articulada"
         },
         {
-          id: "nr11-m1-credencial",
+          id: "nr18-m1-verticais",
           type: "video",
           kicker: "Vídeo",
-          title: "Caracterização de Atmosferas Perigosas e Parâmetros de Oxigênio",
-          playerId: "panda-79c04e08-079c-43e5-b757-c6aefef31b88",
-          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=79c04e08-079c-43e5-b757-c6aefef31b88"
+          title: "Modelos de Elevadores Verticais: Tesoura, Mastro e Unipessoal",
+          playerId: "panda-83961920-e851-4e8e-8074-49df531bcb86",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=83961920-e851-4e8e-8074-49df531bcb86"
         },
         {
-          id: "nr33-m1-onde",
-          type: "content",
-          title: "Onde é encontrado o espaço confinado?",
-          groups: [
-            {
-              label: "Indústrias",
-              items: [
-                { icon: "📄", text: "Indústria de papel e celulose" },
-                { icon: "🖨️", text: "Indústria gráfica" },
-                { icon: "🥫", text: "Indústria alimentícia" },
-                { icon: "🧵", text: "Indústria da borracha, do couro e têxtil" },
-                { icon: "⚓", text: "Indústria naval e operações marítimas" },
-                { icon: "⚗️", text: "Indústrias químicas e petroquímicas" }
-              ]
-            },
-            {
-              label: "Serviços e outras atividades",
-              items: [
-                { icon: "🔥", text: "Serviços de gás" },
-                { icon: "💧", text: "Serviços de água e esgoto" },
-                { icon: "⚡", text: "Serviços de eletricidade" },
-                { icon: "📞", text: "Serviços de telefonia" },
-                { icon: "🏗️", text: "Construção civil" },
-                { icon: "⛏️", text: "Beneficiamento de minérios" },
-                { icon: "🏭", text: "Siderúrgicas e metalúrgicas" }
-              ]
-            }
-          ]
-        },
-        {
-          id: "nr33-m1-pgr",
+          id: "nr18-m1-lanca",
           type: "video",
           kicker: "Vídeo",
-          title: "Gerenciamento no PGR e Riscos Químicos, Biológicos e Físicos",
-          playerId: "panda-2a3ac3aa-de71-4c0a-a5cf-ca01635ed25b",
-          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=2a3ac3aa-de71-4c0a-a5cf-ca01635ed25b"
+          title: "Modelos de Lança: Plataformas Articuladas e Telescópicas",
+          playerId: "panda-bf278218-5083-4cbc-9479-1e617da834e8",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=bf278218-5083-4cbc-9479-1e617da834e8"
         },
         {
-          id: "nr11-m1-definicao",
-          type: "video",
-          kicker: "Vídeo",
-          title: "Riscos Ergonômicos, Mecânicos e Causas de Acidentes",
-          playerId: "panda-aadae03f-82e3-4286-bc06-68780acb340e",
-          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=aadae03f-82e3-4286-bc06-68780acb340e"
-        },
-        {
-          id: "nr33-m1-desafio",
-          type: "quiz-intro",
-          title: "Ato ou condição?",
-          body: "Não é pergunta de alternativa. Cada carta descreve uma situação dos vídeos: jogue em <strong>Ato inseguro</strong> ou <strong>Condição insegura</strong>. Acerte no mínimo <strong>3</strong> de <strong>4</strong>.",
-          count: 4,
-          minCorrect: 3,
-          icon: "🎮"
-        },
-        {
-          id: "nr33-m1-sort",
+          id: "nr18-m1-vf",
           type: "sort",
-          title: "Ato ou condição?",
-          body: "Toque no lado certo antes do tempo acabar.",
-          time: 45,
-          minCorrect: 3,
-          review: "A diferença entre ato inseguro e condição insegura",
-          left: { id: "ato", label: "Ato inseguro", icon: "🙅" },
-          right: { id: "cond", label: "Condição insegura", icon: "⚠️" },
+          vf: true,
+          title: "Verdadeiro ou falso",
+          body: "Leia a frase e toque em Falso ou Verdadeiro. Acerte no mínimo 4 de 5.",
+          time: 60,
+          minCorrect: 4,
+          left: { id: "falso", label: "Falso", icon: "F" },
+          right: { id: "verdadeiro", label: "Verdadeiro", icon: "V" },
           items: [
             {
-              text: "Vapores e gases tóxicos dentro do espaço confinado.",
-              bin: "cond",
-              hint: "Gás e vapor tóxico são risco químico do ambiente: condição insegura."
+              text: "A Portaria MTP 4.390, de 2022, é mais antiga que a Portaria 3.214.",
+              bin: "falso",
+              hint: "1978 é o começo. A MTP 4.390 é de 2022."
             },
             {
-              text: "Ruído elevado, pouca iluminação e calor extremo.",
-              bin: "cond",
-              hint: "Ruído, luz ruim e temperatura extrema são riscos físicos do ambiente."
+              text: "A PEMT é móvel, com cesto ou plataforma, erguida por lança metálica ou por estrutura em tesoura.",
+              bin: "verdadeiro",
+              hint: "É essa a definição: móvel, com estação de trabalho, na lança ou na tesoura."
             },
             {
-              text: "Entrar no espaço sem autorização.",
-              bin: "ato",
-              hint: "Entrar sem permissão é desrespeito à regra: ato inseguro."
+              text: "Este anexo da NR 18 também vale para plataformas em instalações elétricas energizadas.",
+              bin: "falso",
+              hint: "Instalação energizada fica de fora e segue norma própria."
             },
             {
-              text: "Desrespeitar o procedimento e continuar o serviço mesmo assim.",
-              bin: "ato",
-              hint: "Seguir contra a regra é falha de comportamento: ato inseguro."
+              text: "Antes da venda, locação ou arrendamento, a PEMT é revisada conforme o fabricante, e cada entrega traz as instruções e a capacitação.",
+              bin: "verdadeiro",
+              hint: "Revisão, instruções e capacitação acompanham cada entrega."
+            },
+            {
+              text: "A unipessoal leva vários operadores, e a articulada é a lança reta sem dobras.",
+              bin: "falso",
+              hint: "A unipessoal é para um operador. Quem dobra por cima do obstáculo é a articulada. A lança reta é a telescópica."
             }
           ]
         }
@@ -146,8 +121,8 @@ window.QUESTION_SCREEN_SESSION = {
     },
     {
       id: 2,
-      title: "Direitos, Capacitação e Papéis da Equipe de Trabalho",
-      objective: "Estabelecer os direitos e deveres do trabalhador, detalhar a matriz de treinamento e definir a composição da equipe com as atribuições específicas de cada função.",
+      title: "Requisitos Técnicos, Dispositivos de Segurança, Painel de Controle e Checklist Diário",
+      objective: "Apresentar todos os componentes de segurança exigidos por norma, as especificações técnicas de fabricação, o manuseio do painel de comando do cesto e a rotina sistemática do checklist pré-operacional diário.",
       titleUnlock: {
         title: "EQUIPE NO LUGAR",
         body: "Você reconhece o direito à entrada segura, as cargas horárias e o que cabe a cada função.",
@@ -159,8 +134,8 @@ window.QUESTION_SCREEN_SESSION = {
           type: "cover",
           image: "assets/fotos/capa-modulo2.png",
           imageAlt: "Capa do módulo 2",
-          title: "Módulo 2 — Direitos, Capacitação e Papéis da Equipe de Trabalho",
-          subtitle: "Direitos e deveres do trabalhador, matriz de treinamento e atribuições de cada função da equipe."
+          title: "Módulo 2 — Requisitos Técnicos, Dispositivos de Segurança, Painel de Controle e Checklist Diário",
+          subtitle: "Dispositivos de segurança, painel do cesto e checklist pré-operacional diário."
         },
         {
           id: "nr11-m2-ritmo",
@@ -257,8 +232,8 @@ window.QUESTION_SCREEN_SESSION = {
     },
     {
       id: 3,
-      title: "Permissão de Entrada e Trabalho (PET), LOTO, Gases e Ventilação",
-      objective: "Capacitar o aluno nos procedimentos formais de abertura e gestão da PET, isolamento de energias (LOTO), sinalização de área, medição técnica de gases e operação de ventilação.",
+      title: "Operação Segura, Riscos Ambientais/Aéreos e Vedações Absolutas (Procedimentos Inseguros)",
+      objective: "Instruir o operador sobre as regras de tráfego e posicionamento, o isolamento contra riscos externos (rede elétrica, vento, esmagamento) e o cumprimento rigoroso das vedações regulamentares da NR 18.",
       titleUnlock: {
         title: "PET SOB CONTROLE",
         body: "Você acompanha a validade da PET, o bloqueio das energias, a ordem da medição e a ventilação sem oxigênio puro.",
@@ -270,8 +245,8 @@ window.QUESTION_SCREEN_SESSION = {
           type: "cover",
           image: "assets/fotos/capa-modulo3.png",
           imageAlt: "Capa do módulo 3",
-          title: "Módulo 3 — Permissão de Entrada e Trabalho (PET), LOTO, Gases e Ventilação",
-          subtitle: "Abertura e gestão da PET, bloqueio LOTO, sinalização, medição de gases e ventilação."
+          title: "Módulo 3 — Operação Segura, Riscos Ambientais/Aéreos e Vedações Absolutas (Procedimentos Inseguros)",
+          subtitle: "Deslocamento, riscos elétricos e de vento, e o que a NR 18 proíbe na operação."
         },
         {
           id: "nr11-m3-captacao",
@@ -390,8 +365,8 @@ window.QUESTION_SCREEN_SESSION = {
     },
     {
       id: 4,
-      title: "Equipamentos (EPI/EPC), Plano de Emergência, APH e Primeiros Socorros",
-      objective: "Instruir sobre a seleção de EPIs/EPCs, os procedimentos de emergência e resgate, a rede de contatos de socorro, os primeiros socorros em trauma/queimaduras e a confecção de nós de resgate.",
+      title: "Proteção Contra Quedas (NR 06 / NR 18), SPIQ, Ancoragem e Boas Práticas",
+      objective: "Detalhar a obrigatoriedade do Sistema de Proteção Individual Contra Quedas (SPIQ), as especificações do cinturão tipo paraquedista, o ponto de ancoragem no cesto aéreo, os deveres do trabalhador conforme a NR 06 e a síntese das boas práticas operacionais.",
       titleUnlock: {
         title: "PRONTO PARA O RESGATE",
         body: "Você escolhe o equipamento certo, aciona o socorro e não entra no espaço no lugar do vigia.",
@@ -403,8 +378,8 @@ window.QUESTION_SCREEN_SESSION = {
           type: "cover",
           image: "assets/fotos/capa-modulo4.png",
           imageAlt: "Capa do módulo 4",
-          title: "Módulo 4 — Equipamentos (EPI/EPC), Plano de Emergência, APH e Primeiros Socorros",
-          subtitle: "EPIs e EPCs, plano de emergência, socorro, primeiros socorros e nós de resgate."
+          title: "Módulo 4 — Proteção Contra Quedas (NR 06 / NR 18), SPIQ, Ancoragem e Boas Práticas",
+          subtitle: "SPIQ, cinturão paraquedista, ancoragem no cesto e deveres da NR 06."
         },
         {
           id: "nr11-m4-alinhamento",
@@ -521,9 +496,9 @@ window.QUESTION_SCREEN_SESSION = {
           kicker: "Conclusão",
           eyebrow: "Treinamento concluído",
           title: "Parabéns",
-          body: "Você concluiu o treinamento de NR-33 — Segurança no Trabalho em Espaço Confinado.",
-          quote: "EPI certo, Vigia do lado de fora e socorro sem agravar a lesão.",
-          chips: ["NR-33", "Espaço confinado", "Resgate"]
+          body: "Você concluiu o treinamento de NR 18 — PEMT/PTA.",
+          quote: "Cinto ancorado no ponto do fabricante e cultura de prevencionismo.",
+          chips: ["NR-18", "PEMT/PTA", "SPIQ"]
         }
       ]
     }
