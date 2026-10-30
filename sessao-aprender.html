@@ -6,7 +6,7 @@
   <meta name="referrer" content="no-referrer">
   <title>NR 18 — Treinamento de PTA / PEMT</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="question-screen.css?v=nr18-vf">
+  <link rel="stylesheet" href="question-screen.css?v=nr18-m2-console4">
   <style>
     html, body { margin: 0; height: 100%; overflow: hidden; }
   </style>
@@ -166,9 +166,9 @@
 
   <audio id="bg-music" loop preload="metadata" aria-hidden="true"></audio>
 
-  <script src="question-screen-data.js?v=nr18-vf5"></script>
-  <script src="question-screen.js?v=nr18-vf"></script>
-  <script src="narration-text.js?v=nr33-menu"></script>
+  <script src="question-screen-data.js?v=nr18-m2-console2"></script>
+  <script src="question-screen.js?v=nr18-m2-console4"></script>
+  <script src="narration-text.js?v=nr18-m2-console2"></script>
   <script src="narration.js?v=nr33-menu"></script>
   <script>
 (function () {
@@ -208,6 +208,7 @@
           s.type === 'order' ? 'Ordenar' :
           s.type === 'match' ? 'Associação' :
           s.type === 'sort' ? (s.vf ? 'Verdadeiro ou falso' : 'Inspeção') :
+          s.type === 'console' ? 'Console' :
           s.type === 'finale' ? 'Conclusão' :
           s.type
         )
@@ -237,7 +238,7 @@
   var sessionAnswers = {};
   var PTS_MAX = 50;
   function isScoreType(type) {
-    return type === 'question' || type === 'order' || type === 'match' || type === 'sort';
+    return type === 'question' || type === 'order' || type === 'match' || type === 'sort' || type === 'console';
   }
   function isGateType(type) {
     return isScoreType(type) || type === 'reflect' || type === 'compare';
@@ -245,7 +246,8 @@
   // ficha com sequência de fotos: a seta só libera depois de ver todas.
   // Um array "steps" de conteúdo estático não entra aqui.
   function isStepsGate(s) {
-    return !!(s && s.type === 'content' && s.steps && Array.isArray(s.items) && s.items.length);
+    if (!s || s.type !== 'content' || !Array.isArray(s.items) || !s.items.length) return false;
+    return !!(s.steps || s.layout === 'devices');
   }
   // vídeo com player: só libera o avanço faltando ~8s para o fim
   function isVideoGate(s) {
@@ -1179,6 +1181,12 @@
       quizState.mode = 'order';
       quizState.active = true;
     }
+    if (s.type === 'console') {
+      quizState.total = (s.items || []).length || 1;
+      quizState.minCorrect = quizState.total;
+      quizState.mode = 'console';
+      quizState.active = true;
+    }
 
     if (qs) qs.destroy();
     qs = QuestionScreen.mount(shell, payload, {
@@ -1192,7 +1200,7 @@
         if (quizState.active && isQuizStep(s) && !s.opinion) {
           var pts = (result && result.points) || 0;
           sessionAnswers[s.id] = { pts: pts, correct: !!(result && result.correct) };
-          if (result && (result.kind === 'sort' || result.kind === 'match' || result.kind === 'order') && result.total != null) {
+          if (result && (result.kind === 'sort' || result.kind === 'match' || result.kind === 'order' || result.kind === 'console') && result.total != null) {
             quizState.answered = result.total;
             quizState.total = result.total;
             quizState.correct = result.hits || 0;
@@ -1226,7 +1234,7 @@
         autoAdvanceTimer = setTimeout(function () {
           if (isLastQuizQuestion()) showQuizResult();
           else go(1);
-        }, s.type === 'order' || s.type === 'match' || s.type === 'sort' ? 1600 : 3000);
+        }, s.type === 'order' || s.type === 'match' || s.type === 'sort' || s.type === 'console' ? 1600 : 3000);
       },
       onContinue: handleContinue
     });

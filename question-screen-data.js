@@ -124,9 +124,9 @@ window.QUESTION_SCREEN_SESSION = {
       title: "Requisitos Técnicos, Dispositivos de Segurança, Painel de Controle e Checklist Diário",
       objective: "Apresentar todos os componentes de segurança exigidos por norma, as especificações técnicas de fabricação, o manuseio do painel de comando do cesto e a rotina sistemática do checklist pré-operacional diário.",
       titleUnlock: {
-        title: "EQUIPE NO LUGAR",
-        body: "Você reconhece o direito à entrada segura, as cargas horárias e o que cabe a cada função.",
-        icon: "👥"
+        title: "TURNO NO LUGAR",
+        body: "Você separou o dispositivo obrigatório, o chassi travado, o painel e o checklist diário.",
+        icon: "✓"
       },
       screens: [
         {
@@ -138,93 +138,147 @@ window.QUESTION_SCREEN_SESSION = {
           subtitle: "Dispositivos de segurança, painel do cesto e checklist pré-operacional diário."
         },
         {
-          id: "nr11-m2-ritmo",
+          id: "nr18-m2-dispositivos",
           type: "video",
           kicker: "Vídeo",
-          title: "Direitos, Deveres e Obrigações da Empresa na NR-33",
-          playerId: "panda-e47845e1-cc4b-497c-978d-6cee05a3203d",
-          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=e47845e1-cc4b-497c-978d-6cee05a3203d"
+          title: "Dispositivos de Segurança Obrigatórios da PEMT",
+          playerId: "panda-0b811d0e-2623-45b1-a5f9-94703010f9a6",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=0b811d0e-2623-45b1-a5f9-94703010f9a6"
         },
         {
-          id: "nr11-m2-ergonomia",
-          type: "video",
-          kicker: "Vídeo",
-          title: "Programa de Capacitação: Cargas Horárias e Regras do Treinamento",
-          playerId: "panda-e47845e1-cc4b-497c-978d-6cee05a3203d",
-          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=e47845e1-cc4b-497c-978d-6cee05a3203d"
-        },
-        {
-          id: "nr11-m2-proibicoes",
-          type: "video",
-          kicker: "Vídeo",
-          title: "Composição da Equipe e Atribuições do RT e Supervisor de Entrada",
-          playerId: "panda-c33978a1-aaa1-4ec7-b8d9-4d76c97a57f3",
-          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=c33978a1-aaa1-4ec7-b8d9-4d76c97a57f3"
-        },
-        {
-          id: "nr33-m2-supervisor",
+          id: "nr18-m2-dispositivos-lista",
           type: "content",
-          title: "Responsável Técnico e Supervisor de Entrada",
-          body: "O trabalho em espaço confinado é sempre uma operação em equipe.",
-          groups: [
+          layout: "devices",
+          kicker: "Segurança",
+          eyebrow: "Segurança",
+          title: "Dispositivos da PEMT",
+          accent: "PEMT",
+          body: "A PEMT deve ser dotada de:",
+          items: [
             {
-              label: "Quem responde",
-              items: [
-                { icon: "📋", text: "O Responsável Técnico é o profissional habilitado que supervisiona a conformidade técnica e a capacitação." },
-                { icon: "👷", text: "No campo, a liderança operacional é do Supervisor de Entrada." }
-              ]
+              icon: "⚖️",
+              title: "Nivelamento",
+              text: "Dispositivos de segurança que garantem seu perfeito nivelamento no ponto de trabalho, conforme especificação do fabricante."
             },
             {
-              label: "Item 33.3.3",
-              items: [
-                { icon: "🧪", text: "Testar a atmosfera antes de autorizar o acesso." },
-                { icon: "📝", text: "Emitir, assinar e entregar a Permissão de Entrada e Trabalho — a PET — antes do início do serviço." },
-                { icon: "🚨", text: "Garantir que os recursos de emergência estejam apostos." }
-              ]
+              icon: "🤝",
+              title: "Alça de apoio interno",
+              text: "Ponto de apoio fixado no interior do cesto ou plataforma para o operador manter equilíbrio, estabilidade e postura segura durante o trabalho em altura."
+            },
+            {
+              icon: "🔗",
+              title: "Proteção contra quedas",
+              text: "Sistema de proteção contra quedas que atenda às especificações do fabricante ou, na falta destas, ao disposto na NR-12."
+            },
+            {
+              icon: "🛑",
+              title: "Parada de emergência",
+              text: "Botão de parada de emergência."
+            },
+            {
+              icon: "⬇️",
+              title: "Descida de emergência",
+              text: "Dispositivo de emergência que possibilite baixar o trabalhador e a plataforma até o solo em caso de pane elétrica, hidráulica ou mecânica."
+            },
+            {
+              icon: "🔊",
+              title: "Sinalização sonora",
+              text: "Sistema sonoro automático de sinalização acionado durante a subida e a descida."
+            },
+            {
+              icon: "⚡",
+              title: "Proteção elétrica",
+              text: "Proteção contra choque elétrico."
+            },
+            {
+              icon: "⏱️",
+              title: "Horímetro",
+              text: "Instrumento que mede o tempo de funcionamento de um motor ou equipamento."
             }
-          ],
-          note: "O Supervisor tem autoridade para cancelar a PET e suspender o trabalho caso surja uma condição de risco não prevista, além de ser o responsável por encerrar formalmente a PET ao término da atividade."
+          ]
         },
         {
-          id: "nr11-m2-transito",
+          id: "nr18-m2-chassi",
           type: "video",
           kicker: "Vídeo",
-          title: "Atribuições do Vigia, Trabalhador Autorizado e Equipe de Resgate",
-          playerId: "panda-9a3cd422-fbaf-4cce-af55-431f438c17af",
-          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=9a3cd422-fbaf-4cce-af55-431f438c17af"
+          title: "Estabilidade do Chassi, Normas e Manutenção Capacitada",
+          playerId: "panda-41e0a38a-74b2-4150-8a5d-e53b48266045",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=41e0a38a-74b2-4150-8a5d-e53b48266045"
         },
         {
-          id: "nr33-m2-desafio",
-          type: "quiz-intro",
-          title: "Quem faz o quê?",
-          body: "Não é pergunta de alternativa. Una cada situação à função certa. São <strong>4</strong> pares.",
-          count: 4,
-          minCorrect: 4,
-          icon: "🎮"
+          id: "nr18-m2-painel",
+          type: "video",
+          kicker: "Vídeo",
+          title: "Sensor de Sobrecarga e Painel de Comando do Cesto",
+          playerId: "panda-87364781-8400-4fbb-8a12-57159d664037",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=87364781-8400-4fbb-8a12-57159d664037"
         },
         {
-          id: "nr33-m2-match",
-          type: "match",
-          title: "Quem faz o quê?",
-          leftTitle: "Situação",
-          rightTitle: "Função",
-          review: "Direitos, cargas horárias e papéis da equipe",
-          pairs: [
+          id: "nr18-m2-inspecao",
+          type: "video",
+          kicker: "Vídeo",
+          title: "Inspeção Diária do Local de Trabalho",
+          playerId: "panda-7c844aa2-da3e-4ad2-b3c9-f1f1bb0043fa",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=7c844aa2-da3e-4ad2-b3c9-f1f1bb0043fa"
+        },
+        {
+          id: "nr18-m2-checklist",
+          type: "video",
+          kicker: "Vídeo",
+          title: "Checklist Pré-operacional Diário",
+          playerId: "panda-2373531c-20d3-453a-bb28-f13b62f04832",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=2373531c-20d3-453a-bb28-f13b62f04832"
+        },
+        {
+          id: "nr18-m2-console",
+          type: "console",
+          title: "Libera a subida",
+          body: "Uma situação por vez. Toque na ação certa.",
+          items: [
             {
-              ex: "Tem direito à entrada segura. Deve seguir a PET, usar o EPI e avisar o Vigia.",
-              body: "Trabalhador"
+              ask: "O cesto parou no alto por uma pane. O que faz ele descer até o solo?",
+              hint: "A parada só corta o movimento. A descida de emergência rebaixa o cesto na pane elétrica, hidráulica ou mecânica.",
+              answer: "descida",
+              options: [
+                { id: "parada", text: "Parada de emergência" },
+                { id: "descida", text: "Descida de emergência" }
+              ]
             },
             {
-              ex: "Treino inicial de 40 horas. Testa a atmosfera, emite a PET e pode cancelá-la.",
-              body: "Supervisor"
+              ask: "A plataforma tem chassi móvel. Como ela fica, da montagem até a desmontagem?",
+              hint: "O chassi móvel fica nivelado, patolado ou travado o tempo todo.",
+              answer: "patola",
+              options: [
+                { id: "solto", text: "Solto" },
+                { id: "patola", text: "Patolado e travado" }
+              ]
             },
             {
-              ex: "Treino de 16 horas. Fica fora, conta quem entra e sai e não abandona o posto.",
-              body: "Vigia"
+              ask: "A tesoura passou do limite de peso. O que você faz?",
+              hint: "O sensor bloqueia a subida acima do limite. Tire o excesso antes de erguer.",
+              answer: "tirar",
+              options: [
+                { id: "subir", text: "Subo mesmo assim" },
+                { id: "tirar", text: "Tiro o excesso de peso" }
+              ]
             },
             {
-              ex: "Até 32 horas de treino. No mínimo 2 resgatistas a cada 20 trabalhadores.",
-              body: "Resgate"
+              ask: "O caminho tem um buraco. Onde a PEMT pode ficar?",
+              hint: "O operador confere o local antes: solo firme, sem buraco, vala, declive ou fiação.",
+              answer: "solo",
+              options: [
+                { id: "buraco", text: "Em cima do buraco" },
+                { id: "solo", text: "Em solo firme e nivelado" }
+              ]
+            },
+            {
+              ask: "O checklist achou vazamento de óleo. O que você faz?",
+              hint: "Com vazamento, a PEMT não opera. Quem corrige é o técnico capacitado naquela marca e modelo.",
+              answer: "tecnico",
+              options: [
+                { id: "seguir", text: "Sigo o turno" },
+                { id: "tecnico", text: "Paro e chamo o técnico" }
+              ]
             }
           ]
         }

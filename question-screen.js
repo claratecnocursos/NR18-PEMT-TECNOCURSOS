@@ -667,6 +667,37 @@
       </article>`;
   }
 
+  function devicesHTML(data) {
+    var items = Array.isArray(data.items) ? data.items : [];
+    var first = items[0] || {};
+    var title = esc(data.title || '');
+    if (data.accent) title = title.replace(esc(data.accent), '<em>' + esc(data.accent) + '</em>');
+    var dots = items.map(function (_, i) {
+      return '<i class="qs-devices-dot' + (i === 0 ? ' is-on' : '') + '"></i>';
+    }).join('');
+    return `
+      <article class="qs-screen is-content is-devices" data-qs-root data-type="content">
+        <div class="qs-devices">
+          <header class="qs-devices-head">
+            ${data.kicker ? `<span class="qs-devices-pill">${esc(data.kicker)}</span>` : ''}
+            <h2 class="qs-devices-title">${title}</h2>
+          </header>
+          ${data.body ? `<p class="qs-devices-lead">${esc(data.body)}</p>` : ''}
+          <article class="qs-devices-card">
+            <div class="qs-devices-ico" data-qs-dev-ico aria-hidden="true">${esc(first.icon || '')}</div>
+            <h3 data-qs-dev-title>${esc(first.title || '')}</h3>
+            <p data-qs-dev-text>${esc(first.text || '')}</p>
+          </article>
+          <div class="qs-devices-nav">
+            <button type="button" class="qs-devices-arrow" data-qs-dev-prev disabled aria-label="Anterior">‹</button>
+            <span class="qs-devices-count" data-qs-dev-count>1 / ${items.length}</span>
+            <button type="button" class="qs-devices-arrow" data-qs-dev-next ${items.length < 2 ? 'disabled' : ''} aria-label="Próximo">›</button>
+          </div>
+          <div class="qs-devices-dots" data-qs-dev-dots aria-hidden="true">${dots}</div>
+        </div>
+      </article>`;
+  }
+
   function modelsHTML(data) {
     var lines = (Array.isArray(data.lines) ? data.lines : [])
       .map(function (line) { return esc(line); })
@@ -685,6 +716,9 @@
   }
 
   function contentHTML(data) {
+    if (data.layout === 'devices') {
+      return devicesHTML(data);
+    }
     if (data.layout === 'models') {
       return modelsHTML(data);
     }
@@ -1090,6 +1124,26 @@
       </article>`;
   }
 
+  function consoleHTML(data) {
+    return `
+      <article class="qs-screen is-content is-console" data-qs-root data-type="console">
+        <header class="qs-console-head">
+          <h2 class="qs-title">${esc(data.title || 'Libera a subida')}</h2>
+          ${data.body ? `<p class="qs-body">${esc(data.body)}</p>` : ''}
+          <p class="qs-console-progress" data-qs-console-progress></p>
+        </header>
+        <div class="qs-console-stage">
+          <p class="qs-console-card" data-qs-console-card></p>
+        </div>
+        <div class="qs-console-bins">
+          <button type="button" class="qs-console-bin is-a" data-qs-console-bin="0"><b></b></button>
+          <button type="button" class="qs-console-bin is-b" data-qs-console-bin="1"><b></b></button>
+          <button type="button" class="qs-console-lift" data-qs-console-lift hidden>Subir</button>
+        </div>
+        <p class="qs-console-fb" data-qs-console-fb></p>
+      </article>`;
+  }
+
   function sortHTML(data) {
     var items = Array.isArray(data.items) ? data.items : [];
     var vf = !!data.vf;
@@ -1170,6 +1224,10 @@
       ? (passed
         ? ('Você fechou os <strong>' + total + '</strong> pares.')
         : ('Faltam pares. Feche os <strong>' + total + '</strong> para avançar.'))
+      : data.mode === 'console'
+      ? (passed
+        ? 'A PEMT subiu. Os cinco comandos ficaram no lugar.'
+        : 'A subida ainda está travada. Acerte os comandos e tente de novo.')
       : (passed
         ? ('Você acertou <strong>' + hits + '</strong> de <strong>' + total + '</strong> questões.')
         : ('Você acertou <strong>' + hits + '</strong> de <strong>' + total + '</strong>. É necessário acertar pelo menos <strong>' + min + '</strong>. Estude e tente novamente.')));
@@ -1374,6 +1432,7 @@
     else if (type === 'order') html = orderHTML(this.data);
     else if (type === 'match') html = matchHTML(this.data);
     else if (type === 'sort') html = sortHTML(this.data);
+    else if (type === 'console') html = consoleHTML(this.data);
     else if (type === 'quiz-intro') html = quizIntroHTML(this.data);
     else if (type === 'quiz-result') html = quizResultHTML(this.data);
 
@@ -1383,8 +1442,8 @@
     this.el.addEventListener('click', this._onClick);
 
     var lockedVideo = type === 'video' && !!(this.data.embed || this.data.panda || this.data.video);
-    var stepSequence = type === 'content' && !!(this.data && this.data.steps && Array.isArray(this.data.items) && this.data.items.length);
-    var gated = type === 'question' || type === 'order' || type === 'match' || type === 'sort' || type === 'reflect' || type === 'compare' || lockedVideo || stepSequence;
+    var stepSequence = type === 'content' && !!(this.data && Array.isArray(this.data.items) && this.data.items.length && (this.data.steps || this.data.layout === 'devices'));
+    var gated = type === 'question' || type === 'order' || type === 'match' || type === 'sort' || type === 'console' || type === 'reflect' || type === 'compare' || lockedVideo || stepSequence;
     if (!gated) this.state.answered = true;
 
     if (type === 'video' && (this.data.embed || this.data.panda || this.data.youtube || this.data.video)) {
@@ -1395,7 +1454,9 @@
     if (type === 'order') this._bindOrder();
     if (type === 'match') this._bindMatch();
     if (type === 'sort') this._bindSort();
+    if (type === 'console') this._bindConsole();
     if (type === 'content' && this.data && this.data.steps && Array.isArray(this.data.items) && this.data.items.length) this._bindSteps();
+    if (type === 'content' && this.data && this.data.layout === 'devices') this._bindDevices();
     if (type === 'content' && this.data && this.data.links) this._bindHazard();
     if (type === 'content' && this.data && this.data.layout === 'qualify') this._bindQualify();
     if (type === 'content' && this.data && this.data.spots) this._bindExplore();
@@ -1951,6 +2012,155 @@
     });
   };
 
+  QuestionScreen.prototype._bindConsole = function () {
+    var self = this;
+    var items = (this.data && this.data.items) || [];
+    var card = this.el.querySelector('[data-qs-console-card]');
+    var progress = this.el.querySelector('[data-qs-console-progress]');
+    var fb = this.el.querySelector('[data-qs-console-fb]');
+    var bins = Array.prototype.slice.call(this.el.querySelectorAll('[data-qs-console-bin]'));
+    var lift = this.el.querySelector('[data-qs-console-lift]');
+    var total = items.length;
+    var index = 0;
+    var lock = false;
+
+    function finish() {
+      if (self.state.answered) return;
+      beep('end');
+      if (lift) lift.disabled = true;
+      var max = self.options.maxPoints != null ? Number(self.options.maxPoints) : 50;
+      self._complete({
+        kind: 'console',
+        correct: true,
+        points: max,
+        total: total,
+        hits: total
+      });
+    }
+
+    function paintDone() {
+      if (progress) progress.textContent = total + ' de ' + total;
+      if (card) {
+        card.textContent = 'Tudo certo. A PEMT pode subir.';
+        card.classList.add('is-ok');
+      }
+      bins.forEach(function (btn) { btn.hidden = true; });
+      if (lift) lift.hidden = false;
+      if (fb) {
+        fb.textContent = '';
+        fb.className = 'qs-console-fb';
+      }
+    }
+
+    function paint() {
+      var it = items[index];
+      if (!it) return;
+      var options = shuffle(it.options || []);
+      if (progress) progress.textContent = 'Situação ' + (index + 1) + ' de ' + total;
+      if (card) {
+        card.textContent = it.ask || it.label || '';
+        card.classList.remove('is-wrong', 'is-ok', 'is-in');
+        void card.offsetWidth;
+        card.classList.add('is-in');
+      }
+      bins.forEach(function (btn, i) {
+        var op = options[i];
+        var label = btn.querySelector('b');
+        btn.hidden = !op;
+        btn.disabled = false;
+        if (label) label.textContent = op ? op.text : '';
+        btn.setAttribute('data-qs-console-opt', op ? op.id : '');
+      });
+      if (lift) lift.hidden = true;
+      if (fb) {
+        fb.textContent = '';
+        fb.className = 'qs-console-fb';
+      }
+    }
+
+    bins.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        if (lock || self.state.answered) return;
+        var it = items[index];
+        if (!it) return;
+        if (btn.getAttribute('data-qs-console-opt') !== it.answer) {
+          beep('nok');
+          if (card) {
+            card.classList.remove('is-wrong');
+            void card.offsetWidth;
+            card.classList.add('is-wrong');
+          }
+          if (fb) {
+            fb.textContent = it.hint || 'Essa ação não libera a subida.';
+            fb.className = 'qs-console-fb is-nok';
+          }
+          return;
+        }
+        lock = true;
+        beep('ok');
+        bins.forEach(function (other) { other.disabled = true; });
+        if (card) card.classList.add('is-ok');
+        if (fb) {
+          fb.textContent = 'Certo.';
+          fb.className = 'qs-console-fb is-ok';
+        }
+        self._consoleWait = setTimeout(function () {
+          self._consoleWait = null;
+          lock = false;
+          index += 1;
+          if (index >= total) paintDone();
+          else paint();
+        }, 650);
+      });
+    });
+
+    if (lift) lift.addEventListener('click', finish);
+    paint();
+  };
+
+  QuestionScreen.prototype._bindDevices = function () {
+    var self = this;
+    var items = (this.data && this.data.items) || [];
+    var ico = this.el.querySelector('[data-qs-dev-ico]');
+    var title = this.el.querySelector('[data-qs-dev-title]');
+    var text = this.el.querySelector('[data-qs-dev-text]');
+    var count = this.el.querySelector('[data-qs-dev-count]');
+    var prev = this.el.querySelector('[data-qs-dev-prev]');
+    var next = this.el.querySelector('[data-qs-dev-next]');
+    var dots = Array.prototype.slice.call(this.el.querySelectorAll('.qs-devices-dot'));
+    var i = 0;
+    var total = items.length;
+
+    function paint() {
+      var it = items[i] || {};
+      if (ico) ico.textContent = it.icon || '';
+      if (title) title.textContent = it.title || '';
+      if (text) text.textContent = it.text || '';
+      if (count) count.textContent = (i + 1) + ' / ' + total;
+      if (prev) prev.disabled = i <= 0;
+      if (next) next.disabled = i >= total - 1;
+      dots.forEach(function (dot, k) {
+        dot.classList.toggle('is-on', k === i);
+        dot.classList.toggle('is-seen', k < i);
+      });
+      if (i >= total - 1 && !self.state.answered) self._complete({ kind: 'devices' });
+    }
+
+    if (prev) prev.addEventListener('click', function () {
+      if (i <= 0) return;
+      beep('click');
+      i -= 1;
+      paint();
+    });
+    if (next) next.addEventListener('click', function () {
+      if (i >= total - 1) return;
+      beep('click');
+      i += 1;
+      paint();
+    });
+    paint();
+  };
+
   QuestionScreen.prototype._bindSteps = function () {
     var self = this;
     var root = this.el.querySelector('[data-qs-steps]');
@@ -2388,6 +2598,10 @@
 
   QuestionScreen.prototype.destroy = function () {
     this._stopTimer();
+    if (this._consoleWait) {
+      clearTimeout(this._consoleWait);
+      this._consoleWait = null;
+    }
     this._stopStackAuto();
     onZoomToggle = null;
     zoomClose();

@@ -238,7 +238,7 @@
 
     /* Ordenar e associar embaralham os itens a cada exibição, e os dados
        guardam a resposta certa: aqui vai só o enunciado. */
-    if (screen.type === 'order' || screen.type === 'match' || screen.type === 'sort') {
+    if (screen.type === 'order' || screen.type === 'match' || screen.type === 'sort' || screen.type === 'console') {
       if (screen.title) parts.push(sentence(screen.title));
       if (screen.body) parts.push(clean(stripHtml(screen.body)));
       if (screen.type === 'sort') {
