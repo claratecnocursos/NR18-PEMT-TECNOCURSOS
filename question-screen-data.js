@@ -25,7 +25,8 @@ window.QUESTION_SCREEN_SESSION = {
           image: "assets/fotos/capa-modulo1.png",
           imageAlt: "Capa do módulo 1",
           title: "Módulo 1 — Fundamentos Legais, Normativos e Tipologia das PEMT/PTA",
-          subtitle: "Legislação da NR 18, definição de PEMT/PTA, deveres de fornecedores e modelos de plataforma."
+          subtitle: "Legislação da NR 18, definição de PEMT/PTA, deveres de fornecedores e modelos de plataforma.",
+          transcript: "Módulo 1. Fundamentos legais, normativos e tipologia das plataformas elevatórias móveis de trabalho. Legislação da NR 18, definição de PEMT e PTA, deveres de fornecedores e modelos de plataforma."
         },
         {
           id: "nr18-m1-historico",
@@ -61,7 +62,8 @@ window.QUESTION_SCREEN_SESSION = {
           lines: ["Modelos de Plataformas", "Elevatórias"],
           accent: "Móveis de Trabalho",
           image: "assets/fotos/plataformas.jpg",
-          imageAlt: "Cinco modelos: Mastro, Telescópica, Tesoura, Unipessoal e Articulada"
+          imageAlt: "Cinco modelos: Mastro, Telescópica, Tesoura, Unipessoal e Articulada",
+          transcript: "Equipamentos. Modelos de plataformas elevatórias móveis de trabalho. A tela mostra cinco modelos: mastro, telescópica, tesoura, unipessoal e articulada."
         },
         {
           id: "nr18-m1-verticais",
@@ -85,6 +87,7 @@ window.QUESTION_SCREEN_SESSION = {
           vf: true,
           title: "Verdadeiro ou falso",
           body: "Leia a frase e toque em Falso ou Verdadeiro. Acerte no mínimo 4 de 5.",
+          transcript: "Verdadeiro ou falso. Leia a frase e toque em Falso ou Verdadeiro. Acerte no mínimo quatro de cinco.",
           time: 60,
           minCorrect: 4,
           left: { id: "falso", label: "Falso", icon: "F" },
@@ -135,7 +138,8 @@ window.QUESTION_SCREEN_SESSION = {
           image: "assets/fotos/capa-modulo2.png",
           imageAlt: "Capa do módulo 2",
           title: "Módulo 2 — Requisitos Técnicos, Dispositivos de Segurança, Painel de Controle e Checklist Diário",
-          subtitle: "Dispositivos de segurança, painel do cesto e checklist pré-operacional diário."
+          subtitle: "Dispositivos de segurança, painel do cesto e checklist pré-operacional diário.",
+          transcript: "Módulo 2. Requisitos técnicos, dispositivos de segurança, painel de controle e checklist diário. Dispositivos de segurança, painel do cesto e checklist pré-operacional diário."
         },
         {
           id: "nr18-m2-dispositivos",
@@ -154,6 +158,7 @@ window.QUESTION_SCREEN_SESSION = {
           title: "Dispositivos da PEMT",
           accent: "PEMT",
           body: "A PEMT deve ser dotada de:",
+          transcript: "Segurança. Dispositivos da PEMT. A PEMT deve ser dotada de nivelamento. Dispositivos de segurança que garantem seu perfeito nivelamento no ponto de trabalho, conforme especificação do fabricante. Alça de apoio interno. Ponto de apoio fixado no interior do cesto ou plataforma para o operador manter equilíbrio, estabilidade e postura segura durante o trabalho em altura. Proteção contra quedas. Sistema de proteção contra quedas que atenda às especificações do fabricante ou, na falta destas, ao disposto na NR-12. Parada de emergência. Botão de parada de emergência. Descida de emergência. Dispositivo de emergência que possibilite baixar o trabalhador e a plataforma até o solo em caso de pane elétrica, hidráulica ou mecânica. Sinalização sonora. Sistema sonoro automático de sinalização acionado durante a subida e a descida. Proteção elétrica. Proteção contra choque elétrico. Horímetro. Instrumento que mede o tempo de funcionamento de um motor ou equipamento.",
           items: [
             {
               icon: "⚖️",
@@ -234,6 +239,7 @@ window.QUESTION_SCREEN_SESSION = {
           type: "console",
           title: "Libera a subida",
           body: "Uma situação por vez. Toque na ação certa.",
+          transcript: "Libera a subida. Uma situação por vez. Toque na ação certa.",
           items: [
             {
               ask: "O cesto parou no alto por uma pane. O que faz ele descer até o solo?",
@@ -289,9 +295,9 @@ window.QUESTION_SCREEN_SESSION = {
       title: "Operação Segura, Riscos Ambientais/Aéreos e Vedações Absolutas (Procedimentos Inseguros)",
       objective: "Instruir o operador sobre as regras de tráfego e posicionamento, o isolamento contra riscos externos (rede elétrica, vento, esmagamento) e o cumprimento rigoroso das vedações regulamentares da NR 18.",
       titleUnlock: {
-        title: "PET SOB CONTROLE",
-        body: "Você acompanha a validade da PET, o bloqueio das energias, a ordem da medição e a ventilação sem oxigênio puro.",
-        icon: "📋"
+        title: "OPERAÇÃO NO LUGAR",
+        body: "Você separou o deslocamento seguro, o risco aéreo, os 3 metros, o vento e a vedação.",
+        icon: "✓"
       },
       screens: [
         {
@@ -300,118 +306,160 @@ window.QUESTION_SCREEN_SESSION = {
           image: "assets/fotos/capa-modulo3.png",
           imageAlt: "Capa do módulo 3",
           title: "Módulo 3 — Operação Segura, Riscos Ambientais/Aéreos e Vedações Absolutas (Procedimentos Inseguros)",
-          subtitle: "Deslocamento, riscos elétricos e de vento, e o que a NR 18 proíbe na operação."
+          subtitle: "Deslocamento, riscos elétricos e de vento, e o que a NR 18 proíbe na operação.",
+          transcript: "Módulo 3. Operação segura, riscos ambientais e aéreos, e vedações absolutas, procedimentos inseguros. Deslocamento, riscos elétricos e de vento, e o que a NR 18 proíbe na operação."
         },
         {
-          id: "nr11-m3-captacao",
+          id: "nr18-m3-piso",
           type: "video",
           kicker: "Vídeo",
-          title: "Permissão de Entrada e Trabalho (PET), Validade e Sinalização",
-          playerId: "panda-025b5f4e-c9bb-4165-aaa3-45e8a774ab8a",
-          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=025b5f4e-c9bb-4165-aaa3-45e8a774ab8a"
+          title: "Regras de Movimentação, Deslocamento e Condições do Piso",
+          playerId: "panda-15dae196-7df2-46d2-90c3-4f7db4c3606f",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=15dae196-7df2-46d2-90c3-4f7db4c3606f"
         },
         {
-          id: "nr33-m3-pet",
+          id: "nr18-m3-aereos",
+          type: "video",
+          kicker: "Vídeo",
+          title: "Riscos Aéreos, Esmagamento e Colisões Superiores",
+          playerId: "panda-132f4deb-897d-48fb-9c19-8a907914ae52",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=132f4deb-897d-48fb-9c19-8a907914ae52"
+        },
+        {
+          id: "nr18-m3-eletrico",
+          type: "video",
+          kicker: "Vídeo",
+          title: "Risco Elétrico e Distância Mínima de Segurança (3 Metros)",
+          playerId: "panda-8b7d252d-2503-4cdf-8ed1-2d6c775607d1",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=8b7d252d-2503-4cdf-8ed1-2d6c775607d1"
+        },
+        {
+          id: "nr18-m3-vento",
+          type: "video",
+          kicker: "Vídeo",
+          title: "Ação do Vento (Limite de 45 km/h) e Organização de Ferramentas",
+          playerId: "panda-a4bbe9c8-f91b-44eb-bde9-ef2aa7fd6cf4",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=a4bbe9c8-f91b-44eb-bde9-ef2aa7fd6cf4"
+        },
+        {
+          id: "nr18-m3-vedacoes",
           type: "content",
-          layout: "pet",
-          title: "Validade, cancelamento e sinalização",
-          body: "A PET autoriza a entrada. Ela tem prazo, placa e arquivo.",
-          facts: [
-            { value: "24h", label: "Validade máxima da permissão.", tone: "hot" },
-            { value: "5 anos", label: "Arquivo depois que a PET encerra.", tone: "purple" },
-            { value: "33.5.12.1", label: "A prorrogação só vale nesta regra.", tone: "soft" }
-          ],
-          reasonTitle: "Emita outra PET se",
-          reasons: [
-            { n: "1", text: "A entrada atrasou mais de 30 minutos." },
-            { n: "2", text: "Entrou ou saiu alguém que não estava na lista." },
-            { n: "3", text: "O entorno mudou ou a jornada passou de 12 horas seguidas." }
-          ],
-          sign: {
-            kicker: "Anexo 1",
-            title: "PERIGO - RISCO DE MORTE",
-            text: "Placa obrigatória no ponto de acesso."
-          }
-        },
-        {
-          id: "nr33-m3-loto",
-          type: "video",
-          kicker: "Vídeo",
-          title: "Motivos de Cancelamento da PET e Controle de Energias (LOTO)",
-          playerId: "panda-dfb96f40-86e2-484e-bd47-93400a28c44e",
-          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=dfb96f40-86e2-484e-bd47-93400a28c44e"
-        },
-        {
-          id: "nr11-m3-altura",
-          type: "video",
-          kicker: "Vídeo",
-          title: "Avaliação Atmosférica e Sequência Técnica de Medição de Gases",
-          playerId: "panda-9b041031-226c-4213-b934-82acc409aa00",
-          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=9b041031-226c-4213-b934-82acc409aa00"
-        },
-        {
-          id: "nr33-m3-medicao",
-          type: "content",
-          layout: "measure",
-          title: "Ordem da medição e o oxigênio puro",
-          body: "O Supervisor mede a atmosfera antes da entrada. O monitoramento continua durante o serviço.",
-          steps: [
-            { n: "1", title: "Oxigênio", text: "O₂. É sempre o primeiro teste." },
-            { n: "2", title: "Inflamáveis", text: "O LIE. Só depois do oxigênio." },
-            { n: "3", title: "Gases tóxicos", text: "Por último, inclusive o CO₂." }
-          ],
-          alerts: [
-            { tone: "info", kicker: "Limite", title: "CO₂ até 0,5% em 8 horas", text: "De 1% a 2% já há sintomas." },
-            { tone: "ban", kicker: "Proibido", title: "Oxigênio puro", text: "Não use na ventilação. A atmosfera pode ficar explosiva." }
+          layout: "bans",
+          kicker: "Vedação",
+          eyebrow: "Vedação",
+          title: "Vedações da PEMT",
+          accent: "PEMT",
+          body: "O item 18.12.39 proíbe:",
+          transcript: "Vedação. Vedações da PEMT. O item dezoito ponto doze ponto trinta e nove proíbe. Letra a. Usar pranchas, escadas, caixas ou qualquer dispositivo sobre o cesto para alcançar maior altura. Letra b. Usar a PEMT como guindaste ou guincho para içar cargas. Letra c. Fazer trabalhos sob intempéries ou condições climáticas perigosas. Letra d. Operar a máquina contrariando os limites do fabricante de vento, inclinação ou fiação elétrica. Letra e. Transportar pessoas ou materiais alheios ao serviço em execução.",
+          items: [
+            {
+              letter: "a",
+              text: "Usar pranchas, escadas, caixas ou qualquer dispositivo sobre o cesto para alcançar maior altura."
+            },
+            {
+              letter: "b",
+              text: "Usar a PEMT como guindaste ou guincho para içar cargas."
+            },
+            {
+              letter: "c",
+              text: "Fazer trabalhos sob intempéries ou condições climáticas perigosas."
+            },
+            {
+              letter: "d",
+              text: "Operar a máquina contrariando os limites do fabricante de vento, inclinação ou fiação elétrica."
+            },
+            {
+              letter: "e",
+              text: "Transportar pessoas ou materiais alheios ao serviço em execução."
+            }
           ]
         },
         {
-          id: "nr11-m3-paletes",
+          id: "nr18-m3-inseguros",
           type: "video",
           kicker: "Vídeo",
-          title: "Sistemas de Ventilação e Proibição de Oxigênio Puro",
-          playerId: "panda-b952cbf4-8b11-486a-9a1c-3a1d94dbe696",
-          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=b952cbf4-8b11-486a-9a1c-3a1d94dbe696"
+          title: "Análise de Procedimentos Inseguros e Prevenção de Acidentes",
+          playerId: "panda-87a37b23-1a27-44c6-aeb3-8e5b2509eca3",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=87a37b23-1a27-44c6-aeb3-8e5b2509eca3"
         },
         {
-          id: "nr33-m3-desafio",
-          type: "quiz-intro",
-          title: "Pode ou proibido?",
-          body: "Não é pergunta de alternativa. Cada carta traz uma situação do módulo: jogue em <strong>Pode</strong> ou <strong>Proibido</strong>. Acerte no mínimo <strong>3</strong> de <strong>4</strong>.",
-          count: 4,
-          minCorrect: 3,
-          icon: "🎮"
-        },
-        {
-          id: "nr33-m3-sort",
-          type: "sort",
-          title: "Pode ou proibido?",
-          body: "Toque no lado certo antes do tempo acabar.",
-          time: 45,
-          minCorrect: 3,
-          review: "PET, ordem da medição e ventilação sem oxigênio puro",
-          left: { id: "proibido", label: "Proibido", icon: "🚫" },
-          right: { id: "pode", label: "Pode", icon: "✓" },
+          id: "nr18-m3-transposicao",
+          type: "content",
+          layout: "bans",
+          kicker: "18.12.41",
+          eyebrow: "Item 18.12.41",
+          title: "Proibição de Transposição de Nível e Operação sobre Veículos",
+          body: "A PEMT não transfere pessoas de um nível para o outro.",
+          transcript: "Item dezoito ponto doze ponto quarenta e um. Proibição de transposição de nível e operação sobre veículos. A PEMT não transfere pessoas de um nível para o outro. Sair do cesto em altura. O cesto é o local de trabalho do início ao fim da tarefa. Escalar o guarda-corpo ou desembarcar em telhado, laje ou estrutura elevada. Posicionar ou operar a PEMT sobre caminhão, carreta, carro, vagão ou balsa. Posicionar ou operar a PEMT sobre estrutura de andaime. A plataforma fica apoiada direto em solo firme.",
+          note: "A plataforma fica apoiada direto em solo firme.",
           items: [
             {
-              text: "Ventilar só com ar atmosférico limpo e deixar o sistema ligado o tempo todo.",
-              bin: "pode",
-              hint: "A purga é mecânica, com ar fresco. A ventilação fica ligada durante todo o serviço."
+              text: "Sair do cesto em altura. O cesto é o local de trabalho do início ao fim da tarefa."
             },
             {
-              text: "Usar oxigênio puro para ventilar ou purgar o espaço confinado.",
-              bin: "proibido",
-              hint: "Oxigênio puro cria atmosfera hiper-enriquecida. Uma fagulha pode causar explosão."
+              text: "Escalar o guarda-corpo ou desembarcar em telhado, laje ou estrutura elevada."
             },
             {
-              text: "Medir primeiro o oxigênio, depois os inflamáveis e por último os gases tóxicos.",
-              bin: "pode",
-              hint: "Essa é a ordem técnica: O₂, inflamáveis e LIE, gases tóxicos."
+              text: "Posicionar ou operar a PEMT sobre caminhão, carreta, carro, vagão ou balsa."
             },
             {
-              text: "Entrar com uma PET aberta há mais de 24 horas, sem emitir outra.",
-              bin: "proibido",
-              hint: "A PET vale no máximo 24 horas. Fora do prazo, é preciso emitir uma nova."
+              text: "Posicionar ou operar a PEMT sobre estrutura de andaime."
+            }
+          ]
+        },
+        {
+          id: "nr18-m3-console",
+          type: "console",
+          title: "Pode ou para",
+          body: "Uma situação por vez. Toque na ação certa.",
+          transcript: "Pode ou para. Uma situação por vez. Toque na ação certa.",
+          doneText: "As situações estão certas.",
+          doneLabel: "Concluir",
+          items: [
+            {
+              ask: "O caminho tem buraco e rampa. Como você desloca a PEMT?",
+              hint: "Visão livre, longe de buraco, rampa e vala, com a velocidade do piso. O piso firme é liso, uniforme e consolidado.",
+              answer: "desvio",
+              options: [
+                { id: "cima", text: "Passo por cima" },
+                { id: "desvio", text: "Desvio e reduzo" }
+              ]
+            },
+            {
+              ask: "Há viga e tubulação acima do cesto. O que você faz antes de subir?",
+              hint: "Olhe o topo do cesto. O corpo não pode ser prensado contra viga, telhado ou tubulação.",
+              answer: "olhar",
+              options: [
+                { id: "painel", text: "Subo olhando o painel" },
+                { id: "olhar", text: "Olho o topo e subo devagar" }
+              ]
+            },
+            {
+              ask: "A lança aponta para uma rede energizada. Qual a distância mínima?",
+              hint: "São 3 metros de rede ou fiação energizada. O arco elétrico pode saltar sem contato.",
+              answer: "tres",
+              options: [
+                { id: "perto", text: "Posso chegar perto" },
+                { id: "tres", text: "No mínimo 3 metros" }
+              ]
+            },
+            {
+              ask: "O vento passou de 45 km/h. O que você faz?",
+              hint: "Acima de 45 km/h, a plataforma volta ao solo. Cabo e caixa não ficam pendurados para fora do cesto.",
+              answer: "solo",
+              options: [
+                { id: "sigo", text: "Sigo elevado" },
+                { id: "solo", text: "Recolho ao solo" }
+              ]
+            },
+            {
+              ask: "A tesoura está em cima dos garfos da empilhadeira. Você sobe?",
+              hint: "Não opere. Também é proibido escada ou caixa no cesto, usar a PEMT como guindaste, sair no telhado e pôr a máquina sobre caminhão ou andaime.",
+              answer: "nao",
+              options: [
+                { id: "subo", text: "Subo para ganhar altura" },
+                { id: "nao", text: "Não opero" }
+              ]
             }
           ]
         }
@@ -422,9 +470,9 @@ window.QUESTION_SCREEN_SESSION = {
       title: "Proteção Contra Quedas (NR 06 / NR 18), SPIQ, Ancoragem e Boas Práticas",
       objective: "Detalhar a obrigatoriedade do Sistema de Proteção Individual Contra Quedas (SPIQ), as especificações do cinturão tipo paraquedista, o ponto de ancoragem no cesto aéreo, os deveres do trabalhador conforme a NR 06 e a síntese das boas práticas operacionais.",
       titleUnlock: {
-        title: "PRONTO PARA O RESGATE",
-        body: "Você escolhe o equipamento certo, aciona o socorro e não entra no espaço no lugar do vigia.",
-        icon: "⛑️"
+        title: "CINTO NO LUGAR",
+        body: "Você reconhece o EPI, o dever da NR 06, o SPIQ e o ponto de ancoragem no cesto.",
+        icon: "✓"
       },
       screens: [
         {
@@ -433,113 +481,116 @@ window.QUESTION_SCREEN_SESSION = {
           image: "assets/fotos/capa-modulo4.png",
           imageAlt: "Capa do módulo 4",
           title: "Módulo 4 — Proteção Contra Quedas (NR 06 / NR 18), SPIQ, Ancoragem e Boas Práticas",
-          subtitle: "SPIQ, cinturão paraquedista, ancoragem no cesto e deveres da NR 06."
+          subtitle: "SPIQ, cinturão paraquedista, ancoragem no cesto e deveres da NR 06.",
+          transcript: "Módulo 4. Proteção contra quedas, NR 06 e NR 18, SPIQ, ancoragem e boas práticas. SPIQ, cinturão paraquedista, ancoragem no cesto e deveres da NR 06."
         },
         {
-          id: "nr11-m4-alinhamento",
+          id: "nr18-m4-epi",
           type: "video",
           kicker: "Vídeo",
-          title: "Equipamentos de Proteção Individual (EPI) e Coletiva (EPC)",
-          playerId: "panda-3ce74810-23e4-458e-bfc7-bcee90f481be",
-          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=3ce74810-23e4-458e-bfc7-bcee90f481be"
+          title: "Equipamento de Proteção Individual (EPI) e a NR 06",
+          playerId: "panda-26d1d3d8-bdae-41b5-8feb-2c38ff787d6a",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=26d1d3d8-bdae-41b5-8feb-2c38ff787d6a"
         },
         {
-          id: "nr33-m4-kit",
+          id: "nr18-m4-deveres",
+          type: "video",
+          kicker: "Vídeo",
+          title: "As Responsabilidades do Colaborador sobre o EPI (NR 06)",
+          playerId: "panda-3cc63010-d59e-4a8d-ab10-cd2606e63cec",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=3cc63010-d59e-4a8d-ab10-cd2606e63cec"
+        },
+        {
+          id: "nr18-m4-epi-foto",
           type: "content",
-          layout: "kit",
-          title: "EPCs — Equipamentos de resgate",
-          body: "Os números da lista são os mesmos da foto.",
-          image: "assets/fotos/EPCS.png",
-          imageAlt: "Conjunto de EPCs de resgate numerados de 1 a 7",
-          gear: [
-            { n: "1", title: "Maca envelope" },
-            { n: "2", title: "Tripé de resgate" },
-            { n: "3", title: "Motor de insuflação" },
-            { n: "4", title: "Kit de respiração autônoma" },
-            { n: "5", title: "Conjunto de insuflação e exaustão de ar" },
-            { n: "6", title: "Detector de gases" },
-            { n: "7", title: "Saco de cordas para resgate" }
-          ]
+          layout: "models",
+          kicker: "EPI",
+          eyebrow: "EPI",
+          title: "EPI — Equipamento de Proteção Individual para Trabalho em Altura",
+          lines: ["EPI — Equipamento de Proteção Individual"],
+          accent: "Para Trabalho em Altura",
+          quote: "Equipamento de segurança utilizado para proteção contra risco de queda no posicionamento e movimentação nos trabalhos em altura, sendo utilizado em conjunto com cinturão de segurança tipo paraquedista.",
+          image: "assets/fotos/epi.jpg",
+          imageAlt: "Capacete, cinturão paraquedista, talabarte, luvas, bota e óculos",
+          transcript: "EPI. Equipamento de proteção individual para trabalho em altura. Equipamento de segurança utilizado para proteção contra risco de queda no posicionamento e movimentação nos trabalhos em altura, sendo utilizado em conjunto com cinturão de segurança tipo paraquedista. Na imagem: capacete, cinturão paraquedista, talabarte, luvas, bota e óculos."
         },
         {
-          id: "nr11-m4-outros",
+          id: "nr18-m4-spiq",
           type: "video",
           kicker: "Vídeo",
-          title: "Plano de Emergência, Regra do Vigia e Telefones de Socorro",
-          playerId: "panda-4730945b-53db-4cd2-84a6-451bade159c2",
-          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=4730945b-53db-4cd2-84a6-451bade159c2"
+          title: "Sistema de Proteção Individual Contra Quedas (SPIQ) e Ponto de Ancoragem",
+          playerId: "panda-b29b8361-1b54-4547-81f4-c4b6515b3d67",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=b29b8361-1b54-4547-81f4-c4b6515b3d67"
         },
         {
-          id: "nr33-m4-socorro",
-          type: "content",
-          layout: "socorro",
-          title: "Quem socorre e para onde ligar",
-          body: "O vigia aciona o plano. Quem está dentro recebe o primeiro cuidado sem piorar a lesão.",
-          ban: {
-            kicker: "Regra do vigia",
-            title: "Não entre para resgatar.",
-            text: "Acione o plano e chame socorro. Entrar sozinho é proibido."
-          },
-          phones: [
-            { n: "193", label: "Bombeiros" },
-            { n: "192", label: "SAMU" },
-            { n: "190", label: "Polícia" },
-            { n: "199", label: "Defesa Civil" }
-          ],
-          rules: [
-            { title: "Hemorragia", text: "Compressão direta primeiro. Torniquete só se falhar ou houver amputação." },
-            { title: "Queimadura", text: "1º grau é vermelhidão, 2º grau tem bolha, 3º grau carboniza." },
-            { title: "Fratura", text: "Não alinhe o osso. Imobilize uma articulação acima e uma abaixo." }
-          ]
-        },
-        {
-          id: "nr11-m4-manutencao",
+          id: "nr18-m4-cinturao",
           type: "video",
           kicker: "Vídeo",
-          title: "Atendimento Pré-Hospitalar (APH): Hemorragias e Queimaduras",
-          playerId: "panda-c71808d4-f387-428d-9562-c81d1812df4a",
-          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=c71808d4-f387-428d-9562-c81d1812df4a"
+          title: "Cinturão de Segurança Tipo Paraquedista e Ajuste ao Corpo",
+          playerId: "panda-32f42640-7f1d-4a5c-9915-d1154bab0cf8",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=32f42640-7f1d-4a5c-9915-d1154bab0cf8"
         },
         {
-          id: "nr11-m4-emergencia",
+          id: "nr18-m4-dicas",
           type: "video",
           kicker: "Vídeo",
-          title: "Primeiros Socorros em Fraturas e Prática de Nós de Resgate",
-          playerId: "panda-35e552b2-2fb9-43d2-94fb-a2918f905eba",
-          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=35e552b2-2fb9-43d2-94fb-a2918f905eba"
+          title: "Dicas Fundamentais de Segurança e Encerramento do Treinamento",
+          playerId: "panda-e38dea99-305c-4ee6-8c35-f59bdd79de33",
+          embed: "https://player-vz-d35edf2a-8e7.tv.pandavideo.com.br/embed/?v=e38dea99-305c-4ee6-8c35-f59bdd79de33"
         },
         {
-          id: "nr33-m4-desafio",
-          type: "quiz-intro",
-          title: "Qual é a conduta?",
-          body: "Não é pergunta de alternativa. Una cada situação à conduta certa. São <strong>4</strong> pares.",
-          count: 4,
-          minCorrect: 4,
-          icon: "🎮"
-        },
-        {
-          id: "nr33-m4-match",
-          type: "match",
-          title: "Qual é a conduta?",
-          leftTitle: "Situação",
-          rightTitle: "Conduta",
-          review: "EPI, regra do Vigia, hemorragia e fratura",
-          pairs: [
+          id: "nr18-m4-console",
+          type: "console",
+          title: "Cinto certo",
+          body: "Uma situação por vez. Toque na ação certa.",
+          transcript: "Cinto certo. Uma situação por vez. Toque na ação certa.",
+          doneText: "As situações estão certas.",
+          doneLabel: "Concluir",
+          items: [
             {
-              ex: "Falta oxigênio ou a toxina está alta. Máscara simples não protege.",
-              body: "Ar autônomo"
+              ask: "Pela NR 06, o EPI é um equipamento de uso:",
+              hint: "É o dispositivo de uso individual que protege a segurança e a saúde. Na PEMT: capacete com jugular, bota com biqueira, óculos e luvas.",
+              answer: "individual",
+              options: [
+                { id: "coletivo", text: "Coletivo, da equipe" },
+                { id: "individual", text: "Individual, do trabalhador" }
+              ]
             },
             {
-              ex: "Acidente lá dentro. O Vigia dá o alarme e chama o resgate.",
-              body: "Não entra"
+              ask: "O EPI rasgou no meio do turno. O que você faz?",
+              hint: "Use só para a finalidade certa, guarde, higienize e avise na hora quando ele ficar impróprio.",
+              answer: "aviso",
+              options: [
+                { id: "sigo", text: "Sigo usando" },
+                { id: "aviso", text: "Aviso que ficou impróprio" }
+              ]
             },
             {
-              ex: "Hemorragia profunda. O torniquete só entra se a compressão falhar.",
-              body: "Compressão"
+              ask: "Onde o talabarte fica preso no cesto?",
+              hint: "Todos no cesto usam SPIQ, ligado só no ponto indicado pelo fabricante. Não no guarda-corpo, na tubulação ou no prédio.",
+              answer: "fabricante",
+              options: [
+                { id: "guarda", text: "No guarda-corpo" },
+                { id: "fabricante", text: "No ponto do fabricante" }
+              ]
             },
             {
-              ex: "Fratura fechada ou exposta. O osso não volta para o lugar.",
-              body: "Imobilizar"
+              ask: "O cinturão paraquedista ficou frouxo. Você sobe?",
+              hint: "Ajuste peito e pernas antes. Cinto frouxo machuca órgão e coluna na queda. O talabarte vai na meia-argola dorsal.",
+              answer: "ajusto",
+              options: [
+                { id: "depois", text: "Sim. Aperto depois" },
+                { id: "ajusto", text: "Não. Ajusto antes" }
+              ]
+            },
+            {
+              ask: "O vento passou de 45 km/h. Você sobe mesmo assim?",
+              hint: "Não opere acima de 45 km/h nem a menos de 3 metros da rede. Cinto no ponto certo e sem sair do cesto.",
+              answer: "nao",
+              options: [
+                { id: "subo", text: "Subo. O cinto segura" },
+                { id: "nao", text: "Não subo" }
+              ]
             }
           ]
         },
@@ -552,7 +603,8 @@ window.QUESTION_SCREEN_SESSION = {
           title: "Parabéns",
           body: "Você concluiu o treinamento de NR 18 — PEMT/PTA.",
           quote: "Cinto ancorado no ponto do fabricante e cultura de prevencionismo.",
-          chips: ["NR-18", "PEMT/PTA", "SPIQ"]
+          chips: ["NR-18", "PEMT/PTA", "SPIQ"],
+          transcript: "Conclusão. Treinamento concluído. Parabéns. Você concluiu o treinamento de NR 18, PEMT e PTA. Cinto ancorado no ponto do fabricante e cultura de prevencionismo. NR 18. PEMT, PTA. SPIQ."
         }
       ]
     }

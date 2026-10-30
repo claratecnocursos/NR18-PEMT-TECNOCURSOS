@@ -667,6 +667,36 @@
       </article>`;
   }
 
+  function bansHTML(data) {
+    var items = Array.isArray(data.items) ? data.items : [];
+    var title = esc(data.title || '');
+    if (data.accent) title = title.replace(esc(data.accent), '<em>' + esc(data.accent) + '</em>');
+    var longTitle = String(data.title || '').length > 32;
+    var hasLetter = items.some(function (it) { return it && it.letter; });
+    var rows = items.map(function (it) {
+      return `<li>
+        <span class="qs-ban-no" aria-hidden="true"></span>
+        ${hasLetter ? `<b>${esc(it.letter || '')}</b>` : ''}
+        <span>${esc(it.text || '')}</span>
+      </li>`;
+    }).join('');
+    var note = data.note
+      ? `<p class="qs-bans-note">${esc(typeof data.note === 'object' ? (data.note.text || data.note.body || '') : data.note)}</p>`
+      : '';
+    return `
+      <article class="qs-screen is-content is-bans" data-qs-root data-type="content">
+        <div class="qs-bans">
+          <header class="qs-bans-head">
+            ${data.kicker ? `<span class="qs-bans-pill">${esc(data.kicker)}</span>` : ''}
+            <h2 class="qs-bans-title${longTitle ? ' is-long' : ''}">${title}</h2>
+          </header>
+          ${data.body ? `<p class="qs-bans-lead">${esc(data.body)}</p>` : ''}
+          <ol class="qs-bans-list${hasLetter ? '' : ' is-plain'}">${rows}</ol>
+          ${note}
+        </div>
+      </article>`;
+  }
+
   function devicesHTML(data) {
     var items = Array.isArray(data.items) ? data.items : [];
     var first = items[0] || {};
@@ -708,6 +738,7 @@
         <div class="qs-models">
           ${data.kicker ? `<span class="qs-models-pill">${esc(data.kicker)}</span>` : ''}
           <h2 class="qs-models-title">${lines}${accent ? '<br>' + accent : ''}</h2>
+          ${data.quote ? `<p class="qs-models-quote">${esc(data.quote)}</p>` : ''}
           <figure class="qs-models-photo">
             ${mediaHTML(data, { contain: true })}
           </figure>
@@ -716,6 +747,9 @@
   }
 
   function contentHTML(data) {
+    if (data.layout === 'bans') {
+      return bansHTML(data);
+    }
     if (data.layout === 'devices') {
       return devicesHTML(data);
     }
@@ -1226,8 +1260,8 @@
         : ('Faltam pares. Feche os <strong>' + total + '</strong> para avançar.'))
       : data.mode === 'console'
       ? (passed
-        ? 'A PEMT subiu. Os cinco comandos ficaram no lugar.'
-        : 'A subida ainda está travada. Acerte os comandos e tente de novo.')
+        ? ('Você fechou as <strong>' + total + '</strong> situações.')
+        : 'Ainda há situação em aberto. Acerte todas para avançar.')
       : (passed
         ? ('Você acertou <strong>' + hits + '</strong> de <strong>' + total + '</strong> questões.')
         : ('Você acertou <strong>' + hits + '</strong> de <strong>' + total + '</strong>. É necessário acertar pelo menos <strong>' + min + '</strong>. Estude e tente novamente.')));
@@ -2041,11 +2075,14 @@
     function paintDone() {
       if (progress) progress.textContent = total + ' de ' + total;
       if (card) {
-        card.textContent = 'Tudo certo. A PEMT pode subir.';
+        card.textContent = (self.data && self.data.doneText) || 'Tudo certo. A PEMT pode subir.';
         card.classList.add('is-ok');
       }
       bins.forEach(function (btn) { btn.hidden = true; });
-      if (lift) lift.hidden = false;
+      if (lift) {
+        lift.hidden = false;
+        lift.textContent = (self.data && self.data.doneLabel) || 'Subir';
+      }
       if (fb) {
         fb.textContent = '';
         fb.className = 'qs-console-fb';

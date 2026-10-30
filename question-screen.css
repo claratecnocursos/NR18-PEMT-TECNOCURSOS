@@ -1637,6 +1637,142 @@
   line-height: 1.2;
 }
 
+/* Vedações do item 18.12.39: claro no modo normal, preto só no modo escuro */
+.qs-screen.is-bans {
+  background: #fff;
+  color: var(--qs-ink);
+}
+.qs-bans {
+  height: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 22px 14px;
+  box-sizing: border-box;
+}
+.qs-bans-pill {
+  display: inline-flex;
+  background: #FFA500;
+  color: #141000;
+  font-family: var(--qs-font-h);
+  font-weight: 900;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+.qs-bans-title {
+  margin: 8px 0 0;
+  font-family: var(--qs-font-h);
+  font-weight: 900;
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  color: var(--qs-ink);
+}
+.qs-bans-title em {
+  font-style: normal;
+  color: #FFA500;
+}
+.qs-bans-title.is-long {
+  font-size: clamp(1.02rem, 2.05vw, 1.38rem);
+  line-height: 1.15;
+  max-width: none;
+  white-space: nowrap;
+}
+.qs-bans-lead {
+  margin: 0;
+  font-family: var(--qs-font-h);
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+.qs-bans-list {
+  flex: 1 1 auto;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.qs-bans-list li {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 34px 22px 1fr;
+  gap: 10px;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 14px;
+  border: 1px solid #E6E6F2;
+  background: #fff;
+}
+.qs-bans-list b {
+  font-family: var(--qs-font-h);
+  font-size: 1rem;
+  color: var(--qs-ink);
+}
+.qs-bans-list li span:last-child {
+  font-size: clamp(0.86rem, 1.5vw, 1rem);
+  line-height: 1.25;
+  color: #3a3a4a;
+}
+.qs-bans-list.is-plain li { grid-template-columns: 34px 1fr; }
+.qs-bans-note {
+  margin: 0;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: #FFF4E0;
+  color: #141000;
+  font-family: var(--qs-font-h);
+  font-weight: 800;
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+.qs-ban-no {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 3px solid #E11D48;
+  position: relative;
+}
+.qs-ban-no::after {
+  content: "";
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  top: 50%;
+  height: 3px;
+  margin-top: -1.5px;
+  background: #E11D48;
+  transform: rotate(-45deg);
+  border-radius: 2px;
+}
+
+html.qs-dark .qs-screen.is-bans { background: #000; color: #fff; }
+html.qs-dark .qs-bans-title,
+html.qs-dark .qs-bans-list b { color: #fff; }
+html.qs-dark .qs-bans-list li {
+  background: #121016;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+html.qs-dark .qs-bans-list li span:last-child { color: rgba(255, 255, 255, 0.82); }
+html.qs-dark .qs-bans-note {
+  background: transparent;
+  color: #fff;
+  border: 1.5px solid #FFA500;
+}
+
+@media (max-width: 720px) {
+  .qs-bans { padding: 12px 14px; gap: 8px; }
+  .qs-bans-list li { grid-template-columns: 28px 18px 1fr; gap: 8px; padding: 7px 8px; }
+  .qs-bans-list.is-plain li { grid-template-columns: 28px 1fr; }
+  .qs-bans-title.is-long { white-space: normal; }
+}
+
 /* Slide dos modelos: claro no modo normal, preto só no modo escuro */
 .qs-screen.is-models {
   background: #fff;
@@ -1677,6 +1813,18 @@
 .qs-models-title em {
   font-style: normal;
   color: #FFA500;
+}
+.qs-models-quote {
+  flex: 0 0 auto;
+  margin: 0;
+  max-width: 46em;
+  padding: 10px 14px;
+  border-left: 4px solid #FFA500;
+  border-radius: 0 12px 12px 0;
+  background: #F6F6FB;
+  color: #3a3a4a;
+  font-size: clamp(0.88rem, 1.5vw, 1rem);
+  line-height: 1.35;
 }
 .qs-models-photo {
   position: relative;
@@ -6495,7 +6643,7 @@ html.qs-dark .qs-devices-dot { background: #3a3a44; }
   background: var(--qs-red);
 }
 .qs-mod-dot.is-done {
-  background: var(--qs-navy-3);
+  background: #FFA500;
 }
 .qs-mod-grid {
   display: grid;
@@ -7198,6 +7346,10 @@ html.qs-dark .qs-screen.is-models {
 }
 html.qs-dark .qs-models-title {
   color: #fff;
+}
+html.qs-dark .qs-models-quote {
+  background: #141018;
+  color: rgba(255, 255, 255, 0.82);
 }
 html.qs-dark .qs-models-photo {
   border-color: transparent;
